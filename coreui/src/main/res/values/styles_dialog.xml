@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MaterialAlertDialogTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <!--<item name="materialAlertDialogTitleTextStyle">@style/AlertDialog.Title</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/AlertBody</item>-->
+        <item name="alertDialogStyle">@style/AlertDialogStyle</item>
+        <item name="shapeAppearance">@style/AlertDialogStyleShapeAppearance</item>
+        <item name="buttonBarPositiveButtonStyle">@style/AlertDialog.Button</item>
+        <item name="buttonBarNeutralButtonStyle">@style/AlertDialog.Button</item>
+    </style>
+
+    <style name="AlertDialogStyle" parent="MaterialAlertDialog.MaterialComponents">
+        <item name="shapeAppearance">@style/AlertDialogStyleShapeAppearance</item>
+    </style>
+
+    <style name="AlertDialogStyleShapeAppearance" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="AlertBody" parent="MaterialAlertDialog.MaterialComponents.Body.Text"/>
+
+    <style name="AlertDialog.Title" parent="MaterialAlertDialog.MaterialComponents.Title.Text"/>
+
+    <style name="AlertDialog.Button"  parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textAppearance">@style/Button</item>
+    </style>
+
+</resources>

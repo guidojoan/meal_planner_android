@@ -1,0 +1,94 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-allopen'
+apply from: "../gradle/ktlint.gradle"
+apply from: "../gradle/constants.gradle"
+
+android {
+    compileSdkVersion deps.app.compileSdkVersion
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    androidExtensions {
+        experimental = true
+    }
+
+    defaultConfig {
+        minSdkVersion deps.app.minSdkVersion
+        targetSdkVersion deps.app.targetSdkVersion
+        versionCode deps.app.versionCode
+        versionName deps.app.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        consumerProguardFiles 'proguard-rules.pro'
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+allOpen {
+    annotation('com.astutify.mealplanner.core.Mockable')
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation deps.androidX.appCompat
+    implementation deps.androidX.core
+    implementation deps.androidX.constraintLayout
+    implementation deps.androidX.lifecycle
+    implementation deps.androidX.coroutines
+    implementation deps.material.core
+    implementation deps.androidX.swipeRefreshLayout
+    implementation deps.firebase.messaging
+
+    testImplementation deps.test.junit
+    testImplementation deps.test.mockito
+    testImplementation deps.test.mockitoKotlin
+
+    androidTestImplementation deps.test.testCore
+    androidTestImplementation deps.test.rules
+    androidTestImplementation deps.test.espresso
+    androidTestImplementation deps.test.espressoContrib
+    androidTestImplementation deps.test.mockitoAndroid
+    androidTestImplementation deps.test.mockitoKotlin
+
+    implementation deps.retrofit.okHttp
+    implementation deps.retrofit.okHttpLogging
+
+    implementation deps.dagger.core
+    kapt deps.dagger.kapt
+
+    implementation deps.rx.core
+    implementation deps.rx.relay
+    implementation deps.rx.android
+    implementation deps.rx.bindings
+    implementation deps.rx.bindingsCore
+    implementation deps.rx.relay
+
+    implementation deps.firebase.signIn
+
+    implementation deps.retrofit.core
+    implementation deps.retrofit.gson
+    implementation deps.retrofit.rxJava
+
+    implementation deps.moshi.converter
+    implementation deps.moshi.core
+    kapt deps.moshi.kapt
+    implementation deps.moshi.adapters
+    implementation deps.moshi.kotlin
+
+    implementation deps.glide.core
+    kapt deps.glide.annotatorProcessor
+
+}

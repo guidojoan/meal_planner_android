@@ -1,0 +1,25 @@
+package com.astutify.mealplanner.ingredient.presentation.editingredient
+
+import com.astutify.mealplanner.coreui.entity.IngredientViewModel
+import com.astutify.mealplanner.coreui.presentation.mvi.Feature
+import javax.inject.Inject
+
+class EditIngredientViewFeature @Inject constructor(
+    ingredient: IngredientViewModel?,
+    initialState: EditIngredientViewState?,
+    reducer: EditIngredientViewReducer,
+    effectHandler: EditIngredientViewEffectHandler
+) : Feature<EditIngredientViewState, EditIngredientViewEvent, EditIngredientViewEffect>(
+    initialState = when {
+        initialState != null -> initialState
+        ingredient != null -> EditIngredientViewState(
+            ingredient = ingredient,
+            mode = EditIngredientViewState.Mode.EDIT
+        )
+        else -> EditIngredientViewState()
+    },
+    reducer = reducer,
+    effectHandler = effectHandler
+) {
+    override fun initialEvent() = EditIngredientViewEvent.LoadData
+}

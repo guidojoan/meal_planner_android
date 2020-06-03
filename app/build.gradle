@@ -1,0 +1,116 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'kotlin-allopen'
+apply from: "../gradle/ktlint.gradle"
+apply from: "../gradle/constants.gradle"
+
+def properties = new Properties()
+properties.load(new FileInputStream("local.properties"))
+
+android {
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    androidExtensions {
+        experimental = true
+    }
+    signingConfigs {
+        signing {
+            keyAlias properties.getProperty("signing.keyAlias")
+            keyPassword properties.getProperty("signing.keyPassword")
+            storeFile file(properties.getProperty("signing.storeFile"))
+            storePassword properties.getProperty("signing.storePassword")
+        }
+    }
+    compileSdkVersion deps.app.compileSdkVersion
+    buildToolsVersion deps.app.buildToolsVersion
+    defaultConfig {
+        applicationId "com.astutify.mealplanner"
+        minSdkVersion deps.app.minSdkVersion
+        targetSdkVersion deps.app.targetSdkVersion
+        versionCode deps.app.versionCode
+        versionName deps.app.versionName
+        testInstrumentationRunner "androidx.testa.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.signing
+        }
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.signing
+        }
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation deps.androidX.appCompat
+    implementation deps.androidX.core
+    implementation deps.androidX.constraintLayout
+    implementation deps.androidX.lifecycle
+    implementation deps.androidX.coroutines
+    implementation deps.material.core
+    implementation deps.androidX.swipeRefreshLayout
+    implementation deps.firebase.messaging
+
+    testImplementation deps.test.junit
+    testImplementation deps.test.mockito
+    testImplementation deps.test.mockitoKotlin
+
+    androidTestImplementation deps.test.testCore
+    androidTestImplementation deps.test.rules
+    androidTestImplementation deps.test.espresso
+    androidTestImplementation deps.test.espressoContrib
+    androidTestImplementation deps.test.mockitoAndroid
+    androidTestImplementation deps.test.mockitoKotlin
+
+    implementation deps.retrofit.okHttp
+    implementation deps.retrofit.okHttpLogging
+
+    implementation deps.dagger.core
+    kapt deps.dagger.kapt
+
+    implementation deps.rx.core
+    implementation deps.rx.relay
+    implementation deps.rx.android
+    implementation deps.rx.bindings
+    implementation deps.rx.bindingsCore
+    implementation deps.rx.relay
+
+    implementation deps.firebase.signIn
+
+    implementation deps.retrofit.core
+    implementation deps.retrofit.gson
+    implementation deps.retrofit.rxJava
+
+    implementation deps.moshi.converter
+    implementation deps.moshi.core
+    kapt deps.moshi.kapt
+    implementation deps.moshi.adapters
+    implementation deps.moshi.kotlin
+
+    implementation deps.glide.core
+    kapt deps.glide.annotatorProcessor
+
+    implementation project(':core')
+    implementation project(':ingredient')
+    implementation project(':recipe')
+    implementation project(':auth')
+    implementation project(':userProfile')
+    implementation project(':coreui')
+}

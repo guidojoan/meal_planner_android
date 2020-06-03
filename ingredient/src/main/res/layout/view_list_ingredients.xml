@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainContainer"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="0dp"
+        app:layout_collapseMode="pin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/app_name"
+        app:contentInsetStartWithNavigation="0dp"
+        app:contentInsetEnd="10dp"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeToRefresh"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+    <com.astutify.mealplanner.ingredient.presentation.list.adapter.IngredientsListView
+        android:id="@+id/ingredients"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        tools:listitem="@layout/item_ingredient" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.astutify.mealplanner.coreui.presentation.view.LoadingView
+        android:id="@+id/loadingView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/swipeToRefresh"
+        app:layout_constraintEnd_toEndOf="@id/swipeToRefresh"
+        app:layout_constraintStart_toStartOf="@id/swipeToRefresh"
+        app:layout_constraintTop_toTopOf="@id/swipeToRefresh" />
+
+    <com.astutify.mealplanner.coreui.presentation.view.MessageView
+        android:id="@+id/messageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/swipeToRefresh"
+        app:layout_constraintEnd_toEndOf="@id/swipeToRefresh"
+        app:layout_constraintStart_toStartOf="@id/swipeToRefresh"
+        app:layout_constraintTop_toTopOf="@id/swipeToRefresh" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/buttonAddIngredient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:elevation="8dp"
+        app:srcCompat="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

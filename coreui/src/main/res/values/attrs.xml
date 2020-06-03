@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SingleSelectionView">
+        <attr name="title" format="string" />
+    </declare-styleable>
+    <declare-styleable name="ChipItemsView">
+        <attr name="listTitle" format="string" />
+    </declare-styleable>
+    <declare-styleable name="NumberPicker">
+        <attr name="pickerTitle" format="string" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RecipeIngredientsListView">
+        <attr name="editableAction" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="RecipesGridView">
+        <attr name="spanCount" format="integer" />
+        <attr name="spacing" format="integer" />
+        <attr name="includeEdge" format="boolean" />
+    </declare-styleable>
+</resources>

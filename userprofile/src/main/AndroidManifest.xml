@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.astutify.mealplanner.userprofile" >
+
+    <application android:theme="@style/AppTheme">
+        <activity
+            android:name="com.astutify.mealplanner.userprofile.presentation.house.HouseEditActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

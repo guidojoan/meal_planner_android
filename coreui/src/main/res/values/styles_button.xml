@@ -1,0 +1,20 @@
+<resources>
+
+    <style name="Widget.App.ExtendedFloatingActionButton" parent="Widget.MaterialComponents.ExtendedFloatingActionButton.Icon">
+        <item name="android:textAppearance">@style/Button</item>
+    </style>
+
+    <style name="Widget.App.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="android:textAppearance">@style/Button</item>
+    </style>
+
+    <style name="MaterialButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textAppearance">@style/Button</item>
+    </style>
+
+    <style name="MaterialButtonGrey" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/grey</item>
+        <item name="android:textAppearance">@style/Button</item>
+    </style>
+
+</resources>
