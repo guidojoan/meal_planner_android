@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.astutify.mealplanner.coreui.entity.RecipeViewModel
-import com.astutify.mealplanner.recipe.R
+import com.astutify.mealplanner.recipe.databinding.ListItemRecipeBinding
 
 class RecipesAdapter : ListAdapter<RecipeViewModel, RecyclerView.ViewHolder>(diffCallback) {
 
@@ -40,9 +40,13 @@ class RecipesAdapter : ListAdapter<RecipeViewModel, RecyclerView.ViewHolder>(dif
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeItemViewHolder {
         return RecipeItemViewHolder(
-            LayoutInflater.from(
-                parent.context
-            ).inflate(R.layout.list_item_recipe, parent, false)
+            ListItemRecipeBinding.inflate(
+                LayoutInflater.from(
+                    parent.context
+                ),
+                parent,
+                false
+            )
         )
     }
 

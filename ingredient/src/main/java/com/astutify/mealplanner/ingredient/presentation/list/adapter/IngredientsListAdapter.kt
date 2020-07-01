@@ -6,7 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.astutify.mealplanner.ingredient.R
+import com.astutify.mealplanner.ingredient.databinding.ItemAddIngredientBinding
+import com.astutify.mealplanner.ingredient.databinding.ItemIngredientBinding
 
 class IngredientsListAdapter :
     ListAdapter<IngredientsListView.IngredientListItem, RecyclerView.ViewHolder>(diffCallback) {
@@ -53,8 +54,8 @@ class IngredientsListAdapter :
         return when (ViewType.values()[viewType]) {
             ViewType.INGREDIENT -> {
                 IngredientItemViewHolder(
-                    LayoutInflater.from(parent.context).inflate(
-                        R.layout.item_ingredient,
+                    ItemIngredientBinding.inflate(
+                        LayoutInflater.from(parent.context),
                         parent,
                         false
                     )
@@ -62,8 +63,8 @@ class IngredientsListAdapter :
             }
             ViewType.ADD_INGREDIENT -> {
                 AddIngredientItemViewHolder(
-                    LayoutInflater.from(parent.context).inflate(
-                        R.layout.item_add_ingredient,
+                    ItemAddIngredientBinding.inflate(
+                        LayoutInflater.from(parent.context),
                         parent,
                         false
                     )

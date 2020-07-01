@@ -4,7 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.astutify.mealplanner.coreui.presentation.recyclerview.SlideAdapter
-import com.astutify.mealplanner.recipe.R
+import com.astutify.mealplanner.recipe.databinding.ListItemAddIngredientGroupBinding
+import com.astutify.mealplanner.recipe.databinding.ListItemIngredientGroupBinding
+import com.astutify.mealplanner.recipe.databinding.ListItemRecipeIngredientBinding
 
 class RecipeIngredientsListAdapter(
     private val onClick: (RecipeIngredientsListView.Event) -> Unit,
@@ -56,8 +58,8 @@ class RecipeIngredientsListAdapter(
         return when (ViewType.values()[viewType]) {
             ViewType.INGREDIENT_GROUP -> {
                 IngredientGroupItemViewHolder(
-                    LayoutInflater.from(parent.context).inflate(
-                        R.layout.list_item_ingredient_group,
+                    ListItemIngredientGroupBinding.inflate(
+                        LayoutInflater.from(parent.context),
                         parent,
                         false
                     )
@@ -65,8 +67,8 @@ class RecipeIngredientsListAdapter(
             }
             ViewType.RECIPE_INGREDIENT -> {
                 RecipeIngredientItemViewHolder(
-                    LayoutInflater.from(parent.context).inflate(
-                        R.layout.list_item_recipe_ingredient,
+                    ListItemRecipeIngredientBinding.inflate(
+                        LayoutInflater.from(parent.context),
                         parent,
                         false
                     )
@@ -74,8 +76,8 @@ class RecipeIngredientsListAdapter(
             }
             ViewType.ADD_INGREDIENT_GROUP -> {
                 AddIngredientGroupItemViewHolder(
-                    LayoutInflater.from(parent.context).inflate(
-                        R.layout.list_item_add_ingredient_group,
+                    ListItemAddIngredientGroupBinding.inflate(
+                        LayoutInflater.from(parent.context),
                         parent,
                         false
                     )
