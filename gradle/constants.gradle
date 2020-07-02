@@ -8,7 +8,8 @@ android {
             buildConfigField 'String', 'GOOGLE_API_ID', properties.getProperty("google_api_id")
         }
         debug {
-            buildConfigField 'String', 'SERVER', "\"http://192.168.1.146:8000\""
+            //buildConfigField 'String', 'SERVER', "\"http://192.168.1.146:8000\""
+            buildConfigField 'String', 'SERVER', "\"https://mp.astutify.com\""
             buildConfigField 'String', 'GOOGLE_API_ID', properties.getProperty("google_api_id")
         }
     }

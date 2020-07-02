@@ -91,9 +91,11 @@ class EditRecipeViewReducer @Inject constructor() :
                 )
             }
             is EditRecipeViewEvent.IngredientGroupAdded -> {
+                val newRecipeState = state.recipe.copyWithIngredientGroup(event.name)
                 State(
                     state = state.copyState(
-                        recipe = state.recipe.copyWithIngredientGroup(event.name)
+                        recipe = newRecipeState,
+                        saveEnabled = newRecipeState.saveEnabled()
                     )
                 )
             }
@@ -150,9 +152,11 @@ class EditRecipeViewReducer @Inject constructor() :
                 )
             }
             is EditRecipeViewEvent.CategorySelected -> {
+                val newRecipeState = state.recipe.copy(recipeCategory = event.recipeCategory)
                 State(
                     state.copyState(
-                        recipe = state.recipe.copy(recipeCategory = event.recipeCategory)
+                        recipe = newRecipeState,
+                        saveEnabled = newRecipeState.saveEnabled()
                     )
                 )
             }
