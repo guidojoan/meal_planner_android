@@ -33,13 +33,13 @@ class ChipCollectionSingleSelection(context: Context, attrs: AttributeSet?) :
                 chip.text = it.toString()
                 view.group.addView(chip)
             }
-            setSelected(selected?.let { it } ?: options.first())
+            setSelected(selected)
         }
     }
 
     fun hasItems() = items.isNotEmpty()
 
-    private fun setSelected(item: Any) {
+    private fun setSelected(item: Any?) {
         view.group.findViewWithTag<Chip>(item)?.let {
             if (view.group.checkedChipId != it.id) {
                 view.group.check(it.id)
@@ -49,9 +49,5 @@ class ChipCollectionSingleSelection(context: Context, attrs: AttributeSet?) :
 
     fun getSelected(): Any {
         return view.group.findViewById<Chip>(view.group.checkedChipId).tag
-    }
-
-    interface ChipSingleSelectionViewListener {
-        fun chipSelected(item: Any)
     }
 }

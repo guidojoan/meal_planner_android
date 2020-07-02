@@ -18,6 +18,8 @@ import com.astutify.mealplanner.coreui.model.RecipeViewModel
 import com.astutify.mealplanner.coreui.presentation.view.AlertMessageView
 import com.astutify.mealplanner.coreui.presentation.control.ChipCollectionSingleSelection
 import com.astutify.mealplanner.coreui.presentation.control.NumberPicker
+import com.astutify.mealplanner.coreui.presentation.control.hideButton
+import com.astutify.mealplanner.coreui.presentation.control.showButton
 import com.astutify.mealplanner.coreui.presentation.view.LoadingView
 import com.astutify.mealplanner.coreui.presentation.view.MessageView
 import com.astutify.mealplanner.coreui.presentation.utils.ImagePickerUtils
@@ -168,9 +170,9 @@ class EditRecipeActivity :
 
                 override fun onStateChanged(bottomSheet: View, newState: Int) {
                     if (BottomSheetBehavior.STATE_DRAGGING == newState) {
-                        hideSaveButton()
+                        saveButton.hideButton()
                     } else if (BottomSheetBehavior.STATE_COLLAPSED == newState) {
-                        showSaveButton()
+                        saveButton.showButton()
                     }
                 }
             }
@@ -183,14 +185,6 @@ class EditRecipeActivity :
         } else {
             super.onBackPressed()
         }
-    }
-
-    private fun hideSaveButton() {
-        saveButton.animate().scaleX(0f).scaleY(0f).setDuration(300).start()
-    }
-
-    private fun showSaveButton() {
-        saveButton.animate().scaleX(1f).scaleY(1f).setDuration(300).start()
     }
 
     override fun render(viewState: EditRecipeViewState) {

@@ -8,17 +8,14 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import com.astutify.mealplanner.core.extension.getAsFloatNullable
-import com.astutify.mealplanner.coreui.model.IngredientCategoryViewModel
 import com.astutify.mealplanner.coreui.model.IngredientViewModel
 import com.astutify.mealplanner.coreui.model.MeasurementViewModel
-import com.astutify.mealplanner.coreui.presentation.control.ChipCollectionSingleSelection
 import com.astutify.mealplanner.ingredient.R
 import com.astutify.mealplanner.ingredient.databinding.DialogRecipeIngredientBinding
-import com.astutify.mealplanner.ingredient.presentation.editingredient.EditIngredientView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class AddRecipeIngredientDialog :
-    DialogFragment(){
+    DialogFragment() {
 
     private lateinit var view: DialogRecipeIngredientBinding
     val ingredient: IngredientViewModel by lazy {
@@ -36,7 +33,7 @@ class AddRecipeIngredientDialog :
 
     private fun initView(): View {
         view = DialogRecipeIngredientBinding.inflate(LayoutInflater.from(context), null, false)
-        view.measurementSelector.setListener{
+        view.measurementSelector.setListener {
             view.quantityLayout.suffixText = (it as MeasurementViewModel).getSuffix()
         }
 
@@ -47,7 +44,7 @@ class AddRecipeIngredientDialog :
 
     private fun initMeasurementSelector() {
         val measurements = ingredient.measurements.map { it.measurement }
-        view.measurementSelector.setOptions(measurements)
+        view.measurementSelector.setOptions(measurements, measurements.first())
         view.quantityLayout.suffixText = measurements.first().getSuffix()
     }
 

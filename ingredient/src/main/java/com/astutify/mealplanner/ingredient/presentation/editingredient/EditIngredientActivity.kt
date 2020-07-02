@@ -10,6 +10,8 @@ import com.astutify.mealplanner.coreui.model.IngredientViewModel
 import com.astutify.mealplanner.coreui.model.MeasurementViewModel
 import com.astutify.mealplanner.coreui.presentation.utils.AfterTextChangeWatcher
 import com.astutify.mealplanner.coreui.presentation.control.ChipCollection
+import com.astutify.mealplanner.coreui.presentation.control.hideButton
+import com.astutify.mealplanner.coreui.presentation.control.showButton
 import com.astutify.mealplanner.coreui.presentation.mvi.Feature
 import com.astutify.mealplanner.ingredient.IngredientComponentProvider
 import com.astutify.mealplanner.ingredient.R
@@ -19,6 +21,7 @@ import com.jakewharton.rxrelay2.Relay
 import dagger.BindsInstance
 import dagger.Subcomponent
 import io.reactivex.Observable
+import kotlinx.android.synthetic.main.view_edit_ingredient.*
 import javax.inject.Inject
 
 class EditIngredientActivity :
@@ -171,14 +174,6 @@ class EditIngredientActivity :
         }
     }
 
-    private fun hideSaveButton() {
-        view.saveButton.animate().scaleX(0f).scaleY(0f).setDuration(300).start()
-    }
-
-    private fun showSaveButton() {
-        view.saveButton.animate().scaleX(1f).scaleY(1f).setDuration(300).start()
-    }
-
     private fun renderView(viewState: EditIngredientViewState) {
         if (view.toolbar.title.isNullOrBlank()) {
             view.toolbar.title = when (viewState.mode) {
@@ -189,7 +184,7 @@ class EditIngredientActivity :
         if (view.ingredientName.text!!.isBlank() && viewState.ingredient.name.isNotBlank()) {
             view.ingredientName.setText(viewState.ingredient.name)
         }
-        if (viewState.saveEnabled) showSaveButton() else hideSaveButton()
+        if (viewState.saveEnabled) saveButton.showButton() else saveButton.hideButton()
         renderCategorySelector(viewState)
         renderMeasurementSelector(viewState)
         renderCustomMeasurementSelector(viewState)
