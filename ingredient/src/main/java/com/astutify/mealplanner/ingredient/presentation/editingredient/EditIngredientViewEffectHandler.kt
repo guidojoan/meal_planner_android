@@ -2,7 +2,7 @@ package com.astutify.mealplanner.ingredient.presentation.editingredient
 
 import com.astutify.mealplanner.core.domain.GetIngredientCategoriesUseCase
 import com.astutify.mealplanner.core.domain.GetMeasurementsUseCase
-import com.astutify.mealplanner.core.entity.data.error.BadRequest
+import com.astutify.mealplanner.core.model.data.error.BadRequest
 import com.astutify.mealplanner.coreui.model.ActivityResult
 import com.astutify.mealplanner.coreui.model.IngredientViewModel
 import com.astutify.mealplanner.coreui.model.mapper.toDomain

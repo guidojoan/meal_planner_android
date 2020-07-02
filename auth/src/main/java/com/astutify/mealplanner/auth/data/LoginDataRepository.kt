@@ -1,8 +1,8 @@
 package com.astutify.mealplanner.auth.data
 
 import com.astutify.mealplanner.auth.domain.LoginRepository
-import com.astutify.mealplanner.core.entity.data.AuthData
-import com.astutify.mealplanner.core.entity.data.GoogleUser
+import com.astutify.mealplanner.core.model.data.AuthData
+import com.astutify.mealplanner.core.model.data.GoogleUser
 import io.reactivex.Single
 import javax.inject.Inject
 

@@ -1,10 +1,10 @@
 package com.astutify.mealplanner.userprofile.data
 
-import com.astutify.mealplanner.core.entity.data.mapper.toDomain
-import com.astutify.mealplanner.core.entity.domain.About
-import com.astutify.mealplanner.core.entity.domain.House
-import com.astutify.mealplanner.core.entity.domain.User
-import com.astutify.mealplanner.core.entity.domain.mapper.toData
+import com.astutify.mealplanner.core.model.data.mapper.toDomain
+import com.astutify.mealplanner.core.model.domain.About
+import com.astutify.mealplanner.core.model.domain.House
+import com.astutify.mealplanner.core.model.domain.User
+import com.astutify.mealplanner.core.model.domain.mapper.toData
 import com.astutify.mealplanner.userprofile.domain.HouseRepository
 import io.reactivex.Single
 import javax.inject.Inject

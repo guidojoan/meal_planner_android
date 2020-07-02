@@ -16,5 +16,5 @@ abstract class NavigationModule {
     abstract fun recipeOutNavigatorProvider(factory: RecipeOutNavigatorImpl.Factory): RecipeOutNavigator.Factory
 
     @Binds
-    abstract fun userProfileOutNavigatorProvider(factory: UserProfileOutNavigatorImpl.Factory): UserProfileOutNavigator.Factory
+    abstract fun profileOutNavigator(factory: UserProfileOutNavigatorImpl.Factory): UserProfileOutNavigator.Factory
 }

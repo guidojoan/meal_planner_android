@@ -2,7 +2,7 @@ package com.astutify.mealplanner.core.data
 
 import com.astutify.mealplanner.core.domain.MeasurementLocalRepository
 import com.astutify.mealplanner.core.domain.MeasurementRepository
-import com.astutify.mealplanner.core.entity.domain.Measurement
+import com.astutify.mealplanner.core.model.domain.Measurement
 import io.reactivex.Single
 import javax.inject.Inject
 

@@ -1,8 +1,8 @@
 package com.astutify.mealplanner.userprofile
 
-import com.astutify.mealplanner.userprofile.data.HouseApi
 import com.astutify.mealplanner.userprofile.data.HouseApiRepository
 import com.astutify.mealplanner.userprofile.data.HouseDataRepository
+import com.astutify.mealplanner.userprofile.data.HousesApi
 import com.astutify.mealplanner.userprofile.domain.HouseRepository
 import dagger.Module
 import dagger.Provides
@@ -19,7 +19,7 @@ class UserProfileModule {
     }
 
     @Provides
-    fun providesHouseApi(retrofit: Retrofit): HouseApi {
-        return retrofit.create(HouseApi::class.java)
+    fun providesHouseApi(retrofit: Retrofit): HousesApi {
+        return retrofit.create(HousesApi::class.java)
     }
 }

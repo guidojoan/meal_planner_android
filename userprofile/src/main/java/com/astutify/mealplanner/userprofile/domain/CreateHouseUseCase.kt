@@ -2,7 +2,7 @@ package com.astutify.mealplanner.userprofile.domain
 
 import com.astutify.mealplanner.core.Mockable
 import com.astutify.mealplanner.core.authentication.SessionManager
-import com.astutify.mealplanner.core.entity.domain.House
+import com.astutify.mealplanner.core.model.domain.House
 import javax.inject.Inject
 
 @Mockable

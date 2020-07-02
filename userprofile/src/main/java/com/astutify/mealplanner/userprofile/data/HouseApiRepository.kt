@@ -2,21 +2,21 @@ package com.astutify.mealplanner.userprofile.data
 
 import com.astutify.mealplanner.core.authentication.SessionApi
 import com.astutify.mealplanner.core.authentication.SessionManager
-import com.astutify.mealplanner.core.entity.data.AuthData
-import com.astutify.mealplanner.core.entity.data.HouseEntity
-import com.astutify.mealplanner.core.entity.data.error.ApiException
+import com.astutify.mealplanner.core.model.data.AuthData
+import com.astutify.mealplanner.core.model.data.HouseApi
+import com.astutify.mealplanner.core.model.data.error.ApiException
 import io.reactivex.Single
 import io.reactivex.Single.error
 import io.reactivex.Single.just
 import javax.inject.Inject
 
 class HouseApiRepository @Inject constructor(
-    private val api: HouseApi,
+    private val api: HousesApi,
     private val sessionApi: SessionApi,
     private val sessionManager: SessionManager
 ) {
 
-    fun postHouse(houseEntity: HouseEntity) = api.postHouse(houseEntity)
+    fun postHouse(houseApi: HouseApi) = api.postHouse(houseApi)
         .flatMap {
             if (it.isSuccessful) {
                 just(Unit)

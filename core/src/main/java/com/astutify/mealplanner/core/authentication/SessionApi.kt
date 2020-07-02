@@ -1,8 +1,8 @@
 package com.astutify.mealplanner.core.authentication
 
-import com.astutify.mealplanner.core.entity.data.AuthData
-import com.astutify.mealplanner.core.entity.data.GoogleUser
-import com.astutify.mealplanner.core.entity.data.UserEntity
+import com.astutify.mealplanner.core.model.data.AuthData
+import com.astutify.mealplanner.core.model.data.GoogleUser
+import com.astutify.mealplanner.core.model.data.UserApi
 import io.reactivex.Single
 import retrofit2.Call
 import retrofit2.Response
@@ -21,5 +21,5 @@ interface SessionApi {
     fun logout(@Body authData: AuthData): Single<Response<Unit>>
 
     @GET("/user")
-    fun getUserProfile(): Single<Response<UserEntity>>
+    fun getUserProfile(): Single<Response<UserApi>>
 }

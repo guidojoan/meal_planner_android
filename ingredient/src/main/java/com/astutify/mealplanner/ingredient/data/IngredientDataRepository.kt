@@ -2,12 +2,12 @@ package com.astutify.mealplanner.ingredient.data
 
 import com.astutify.mealplanner.core.data.CategoriesDataRepository
 import com.astutify.mealplanner.core.data.MeasurementDataRepository
-import com.astutify.mealplanner.core.entity.data.IngredientEntity
-import com.astutify.mealplanner.core.entity.data.mapper.toDomain
-import com.astutify.mealplanner.core.entity.domain.Ingredient
-import com.astutify.mealplanner.core.entity.domain.IngredientCategory
-import com.astutify.mealplanner.core.entity.domain.Measurement
-import com.astutify.mealplanner.core.entity.domain.mapper.toData
+import com.astutify.mealplanner.core.model.data.IngredientApi
+import com.astutify.mealplanner.core.model.data.mapper.toDomain
+import com.astutify.mealplanner.core.model.domain.Ingredient
+import com.astutify.mealplanner.core.model.domain.IngredientCategory
+import com.astutify.mealplanner.core.model.domain.Measurement
+import com.astutify.mealplanner.core.model.domain.mapper.toData
 import com.astutify.mealplanner.ingredient.domain.IngredientRepository
 import io.reactivex.Single
 import io.reactivex.Single.zip
@@ -33,7 +33,7 @@ class IngredientDataRepository @Inject constructor(
     override fun getIngredientsNextPage() =
         mapIngredients(ingredientsApiRepository.nextPage())
 
-    private fun mapIngredients(ingredients: Single<List<IngredientEntity>>) =
+    private fun mapIngredients(ingredients: Single<List<IngredientApi>>) =
         ingredients
             .flatMap {
                 zip(
@@ -45,7 +45,7 @@ class IngredientDataRepository @Inject constructor(
                 )
             }
 
-    private fun mapIngredient(ingredient: Single<IngredientEntity>) =
+    private fun mapIngredient(ingredient: Single<IngredientApi>) =
         ingredient
             .flatMap {
                 zip(

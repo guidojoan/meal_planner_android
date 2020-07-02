@@ -138,7 +138,10 @@ class EditRecipeViewReducerTest {
         val recipe = TestHelper.getRecipeVM()
         val newInitialState = initialState.copyState(recipe = recipe)
         val event =
-            EditRecipeViewEvent.RecipeIngredientRemoveClick(recipe.ingredientGroups.first().recipeIngredients.first().id)
+            EditRecipeViewEvent.RecipeIngredientRemoveClick(
+                recipe.ingredientGroups.first()
+                    .recipeIngredients.first().id
+            )
         val expectedState = newInitialState.copyState(
             recipe = newInitialState.recipe.copyWithOutIngredient(event.recipeIngredientId),
             saveEnabled = false

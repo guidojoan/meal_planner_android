@@ -69,19 +69,15 @@ data class IngredientViewModel(
         return copy(packages = packages?.filterNot { it.id == packageId })
     }
 
-    fun getPrimaryMeasurement() =
-        measurements.find { it.measurement.primary }?.measurement
+    fun getPrimaryMeasurement() = measurements.find { it.measurement.primary }?.measurement
 
-    fun getCustomMeasurements() =
-        measurements.filterNot { it.measurement.primary }
+    fun getCustomMeasurements() = measurements.filterNot { it.measurement.primary }
 
-    private fun hasPrimaryMeasurement() =
-        getPrimaryMeasurement()?.let { true } ?: false
+    private fun hasPrimaryMeasurement() = getPrimaryMeasurement()?.let { true } ?: false
 
     fun copyWithSeenStatus() = copy(status = Status.SEEN)
 
-    fun isReadyToSave() =
-        name.isNotBlank() && hasPrimaryMeasurement() && category.id.isNotBlank()
+    fun isReadyToSave() = name.isNotBlank() && hasPrimaryMeasurement() && category.id.isNotBlank()
 
     enum class Status {
         NEW, UPDATED, SEEN

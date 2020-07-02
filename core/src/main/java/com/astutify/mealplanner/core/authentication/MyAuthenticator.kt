@@ -1,6 +1,6 @@
 package com.astutify.mealplanner.core.authentication
 
-import com.astutify.mealplanner.core.entity.data.AuthData
+import com.astutify.mealplanner.core.model.data.AuthData
 import okhttp3.Authenticator
 import okhttp3.Request
 import okhttp3.Response

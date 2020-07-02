@@ -1,8 +1,8 @@
 package com.astutify.mealplanner.recipe.data
 
 import android.net.Uri
-import com.astutify.mealplanner.core.entity.data.RecipeEntity
-import com.astutify.mealplanner.core.entity.data.error.ApiErrorManager
+import com.astutify.mealplanner.core.model.data.RecipeApi
+import com.astutify.mealplanner.core.model.data.error.ApiErrorManager
 import com.astutify.mealplanner.coreui.presentation.utils.ImagePickerUtils
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
@@ -15,12 +15,12 @@ import okhttp3.RequestBody.Companion.toRequestBody
 import javax.inject.Inject
 
 class RecipeAdminApiRepository @Inject constructor(
-    private val api: RecipeApi,
+    private val api: RecipesApi,
     private val imagePickerUtils: ImagePickerUtils,
     private val apiErrorManager: ApiErrorManager
 ) {
 
-    fun saveRecipe(recipe: RecipeEntity) =
+    fun saveRecipe(recipe: RecipeApi) =
         api.saveRecipe(getRecipeBody(recipe), getImageBody(recipe))
             .flatMap {
                 if (it.isSuccessful) {
@@ -39,7 +39,7 @@ class RecipeAdminApiRepository @Inject constructor(
             }
         }
 
-    fun updateRecipe(recipe: RecipeEntity) =
+    fun updateRecipe(recipe: RecipeApi) =
         api.updateRecipe(getRecipeBody(recipe), getImageBody(recipe))
             .flatMap {
                 if (it.isSuccessful) {
@@ -49,14 +49,14 @@ class RecipeAdminApiRepository @Inject constructor(
                 }
             }
 
-    private fun getRecipeBody(recipe: RecipeEntity): RequestBody {
-        val adapter: JsonAdapter<RecipeEntity> =
-            Moshi.Builder().build().adapter(RecipeEntity::class.java)
+    private fun getRecipeBody(recipe: RecipeApi): RequestBody {
+        val adapter: JsonAdapter<RecipeApi> =
+            Moshi.Builder().build().adapter(RecipeApi::class.java)
         val recipeJson = adapter.toJson(recipe)
         return recipeJson!!.toRequestBody(REQUEST_BODY_JSON.toMediaTypeOrNull())
     }
 
-    private fun getImageBody(recipe: RecipeEntity): MultipartBody.Part? {
+    private fun getImageBody(recipe: RecipeApi): MultipartBody.Part? {
         return recipe.imageUrl.let { imageUrl ->
             imagePickerUtils.getMultipartImageBody(Uri.parse(imageUrl))
         }

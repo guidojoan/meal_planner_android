@@ -4,8 +4,8 @@ import com.astutify.mealplanner.core.FeatureScope
 import com.astutify.mealplanner.core.data.CategoriesDataRepository
 import com.astutify.mealplanner.core.data.MeasurementDataRepository
 import com.astutify.mealplanner.recipe.data.RecipeAdminApiRepository
-import com.astutify.mealplanner.recipe.data.RecipeApi
 import com.astutify.mealplanner.recipe.data.RecipeDataRepository
+import com.astutify.mealplanner.recipe.data.RecipesApi
 import com.astutify.mealplanner.recipe.data.RecipesApiRepository
 import com.astutify.mealplanner.recipe.domain.RecipeRepository
 import dagger.Module
@@ -32,7 +32,7 @@ class RecipeModule {
     }
 
     @Provides
-    fun providesRecipeApi(retrofit: Retrofit): RecipeApi {
-        return retrofit.create(RecipeApi::class.java)
+    fun providesRecipeApi(retrofit: Retrofit): RecipesApi {
+        return retrofit.create(RecipesApi::class.java)
     }
 }

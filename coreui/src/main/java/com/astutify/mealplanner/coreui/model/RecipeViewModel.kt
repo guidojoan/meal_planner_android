@@ -56,7 +56,10 @@ data class RecipeViewModel(
         return copy(
             ingredientGroups = ingredientGroups.map {
                 if (it.recipeIngredients.find { item -> item.id == recipeIngredientId } != null) {
-                    it.copy(recipeIngredients = it.recipeIngredients.filterNot { ingredient -> ingredient.id == recipeIngredientId })
+                    it.copy(
+                        recipeIngredients = it.recipeIngredients
+                            .filterNot { ingredient -> ingredient.id == recipeIngredientId }
+                    )
                 } else {
                     it
                 }

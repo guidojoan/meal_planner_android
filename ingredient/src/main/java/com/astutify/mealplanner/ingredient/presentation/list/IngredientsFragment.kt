@@ -92,11 +92,10 @@ class IngredientsFragment :
         view.ingredients.bind {
             when (it) {
                 is IngredientsListView.Event.IngredientClicked -> eventsRelay.accept(
-                    IngredientsView.Intent.IngredientClicked(
-                        it.ingredient
-                    )
+                    IngredientsView.Intent.IngredientClicked(it.ingredient)
                 )
-                is IngredientsListView.Event.OnEndReached -> eventsRelay.accept(IngredientsView.Intent.OnEndOfListReached)
+                is IngredientsListView.Event.OnEndReached ->
+                    eventsRelay.accept(IngredientsView.Intent.OnEndOfListReached)
             }
         }
     }

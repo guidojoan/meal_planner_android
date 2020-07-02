@@ -1,7 +1,7 @@
 package com.astutify.mealplanner.userprofile.domain
 
 import com.astutify.mealplanner.core.authentication.SessionManager
-import com.astutify.mealplanner.core.entity.data.error.ApiException
+import com.astutify.mealplanner.core.model.data.error.ApiException
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions

@@ -2,8 +2,8 @@ package com.astutify.mealplanner.core.data
 
 import com.astutify.mealplanner.core.domain.CategoriesLocalRepository
 import com.astutify.mealplanner.core.domain.CategoriesRepository
-import com.astutify.mealplanner.core.entity.domain.IngredientCategory
-import com.astutify.mealplanner.core.entity.domain.RecipeCategory
+import com.astutify.mealplanner.core.model.domain.IngredientCategory
+import com.astutify.mealplanner.core.model.domain.RecipeCategory
 import io.reactivex.Single
 import javax.inject.Inject
 

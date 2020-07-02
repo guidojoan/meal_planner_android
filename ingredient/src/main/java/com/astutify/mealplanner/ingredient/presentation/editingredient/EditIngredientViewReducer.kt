@@ -36,7 +36,11 @@ class EditIngredientViewReducer @Inject constructor() :
             is EditIngredientViewEvent.DataLoaded -> State(
                 state.copyState(
                     measurements = event.measurements,
-                    customMeasurements = event.customMeasurements.filterNot { it in state.ingredient.getCustomMeasurements().map { item -> item.measurement } },
+                    customMeasurements = event.customMeasurements
+                        .filterNot {
+                            it in state.ingredient.getCustomMeasurements()
+                                .map { item -> item.measurement }
+                        },
                     categories = event.categories
                 )
             )

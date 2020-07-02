@@ -1,6 +1,6 @@
 package com.astutify.mealplanner.recipe.domain
 
-import com.astutify.mealplanner.core.entity.domain.Recipe
+import com.astutify.mealplanner.core.model.domain.Recipe
 import io.reactivex.Single
 
 interface RecipeRepository {

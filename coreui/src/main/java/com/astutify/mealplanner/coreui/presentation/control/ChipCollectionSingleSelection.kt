@@ -11,8 +11,7 @@ import com.google.android.material.chip.Chip
 class ChipCollectionSingleSelection(context: Context, attrs: AttributeSet?) :
     ConstraintLayout(context, attrs) {
 
-    private val view =
-        ViewChipSingleSelectionBinding.inflate(LayoutInflater.from(context), this, true)
+    private val view = ViewChipSingleSelectionBinding.inflate(LayoutInflater.from(context), this, true)
     private var items: List<Any> = listOf()
 
     fun setListener(listener: (Any?) -> Unit) {

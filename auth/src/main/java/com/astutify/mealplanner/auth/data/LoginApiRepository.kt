@@ -2,9 +2,9 @@ package com.astutify.mealplanner.auth.data
 
 import com.astutify.mealplanner.core.authentication.SessionApi
 import com.astutify.mealplanner.core.authentication.SessionManager
-import com.astutify.mealplanner.core.entity.data.AuthData
-import com.astutify.mealplanner.core.entity.data.GoogleUser
-import com.astutify.mealplanner.core.entity.data.error.ApiException
+import com.astutify.mealplanner.core.model.data.AuthData
+import com.astutify.mealplanner.core.model.data.GoogleUser
+import com.astutify.mealplanner.core.model.data.error.ApiException
 import io.reactivex.Single
 import javax.inject.Inject
 

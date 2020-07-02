@@ -1,7 +1,7 @@
 package com.astutify.mealplanner.auth.presentation.login
 
 import android.os.Parcelable
-import com.astutify.mealplanner.core.entity.data.GoogleUser
+import com.astutify.mealplanner.core.model.data.GoogleUser
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize

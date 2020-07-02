@@ -1,7 +1,7 @@
 package com.astutify.mealplanner.recipe.domain
 
 import com.astutify.mealplanner.core.Mockable
-import com.astutify.mealplanner.core.entity.domain.Recipe
+import com.astutify.mealplanner.core.model.domain.Recipe
 import javax.inject.Inject
 
 @Mockable

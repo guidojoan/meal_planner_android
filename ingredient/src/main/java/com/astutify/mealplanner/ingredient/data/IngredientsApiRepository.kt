@@ -1,14 +1,14 @@
 package com.astutify.mealplanner.ingredient.data
 
-import com.astutify.mealplanner.core.entity.data.IngredientEntity
-import com.astutify.mealplanner.core.entity.data.error.ApiErrorManager
+import com.astutify.mealplanner.core.model.data.IngredientApi
+import com.astutify.mealplanner.core.model.data.error.ApiErrorManager
 import io.reactivex.Single
 import io.reactivex.Single.error
 import io.reactivex.Single.just
 import javax.inject.Inject
 
 class IngredientsApiRepository @Inject constructor(
-    private val api: IngredientApi,
+    private val api: IngredientsApi,
     private val apiErrorManager: ApiErrorManager
 ) {
     private var page = 0
@@ -16,7 +16,7 @@ class IngredientsApiRepository @Inject constructor(
     private var nextPage: Int? = null
     private var keywords: String? = null
 
-    fun firstPage(keywords: String?): Single<List<IngredientEntity>> {
+    fun firstPage(keywords: String?): Single<List<IngredientApi>> {
         initPaging()
         this.keywords = keywords
         return api.getIngredients(keywords, page, pageSize)

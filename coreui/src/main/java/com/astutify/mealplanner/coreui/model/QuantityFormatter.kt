@@ -10,31 +10,11 @@ class QuantityFormatter {
         fun formatQuantity(quantity: Float, measurement: MeasurementViewModel?): String {
             return when {
                 quantity == 0f -> String.EMPTY
-                quantity > 0f && quantity < 1f -> "${formatAsQuantity2(
-                    quantity
-                )}  ${getSuffix(
-                    measurement
-                )}"
-                quantity == 1f -> "${formatAsQuantity(
-                    quantity
-                )}  ${getSuffix(
-                    measurement
-                )}"
-                quantity > 1f && quantity < 1000f -> "${formatAsQuantity(
-                    quantity
-                )}  ${getSuffixPlural(
-                    measurement
-                )}"
-                quantity == 1000f -> "${formatAsQuantity(
-                    quantity / 1000
-                )}   ${get1000Suffix(
-                    measurement
-                )}"
-                else -> "${formatAsQuantity(
-                    quantity / 1000
-                )}   ${get1000SuffixPlural(
-                    measurement
-                )}"
+                quantity > 0f && quantity < 1f -> "${formatAsQuantity2(quantity)}  ${getSuffix(measurement)}"
+                quantity == 1f -> "${formatAsQuantity(quantity)}  ${getSuffix(measurement)}"
+                quantity > 1f && quantity < 1000f -> "${formatAsQuantity(quantity)}  ${getSuffixPlural(measurement)}"
+                quantity == 1000f -> "${formatAsQuantity(quantity / 1000)}   ${get1000Suffix(measurement)}"
+                else -> "${formatAsQuantity(quantity / 1000)}   ${get1000SuffixPlural(measurement)}"
             }
         }
 
@@ -50,10 +30,8 @@ class QuantityFormatter {
         private fun get1000Suffix(measurement: MeasurementViewModel?): String {
             return measurement?.let {
                 when (getUnitSystem()) {
-                    UnitSystem.IMPERIAL ->
-                        measurement.imperial1000Suffix?.let { it } ?: measurement.imperialSuffix
-                    UnitSystem.METRIC ->
-                        measurement.metric1000Suffix?.let { it } ?: measurement.metricSuffix
+                    UnitSystem.IMPERIAL -> measurement.imperial1000Suffix?.let { it } ?: measurement.imperialSuffix
+                    UnitSystem.METRIC -> measurement.metric1000Suffix?.let { it } ?: measurement.metricSuffix
                 }
             } ?: String.EMPTY
         }
@@ -61,10 +39,8 @@ class QuantityFormatter {
         private fun getSuffixPlural(measurement: MeasurementViewModel?): String {
             return measurement?.let {
                 when (getUnitSystem()) {
-                    UnitSystem.IMPERIAL ->
-                        measurement.imperialSuffixPlural?.let { it } ?: measurement.imperialSuffix
-                    UnitSystem.METRIC ->
-                        measurement.metricSuffixPlural?.let { it } ?: measurement.metricSuffix
+                    UnitSystem.IMPERIAL -> measurement.imperialSuffixPlural?.let { it } ?: measurement.imperialSuffix
+                    UnitSystem.METRIC -> measurement.metricSuffixPlural?.let { it } ?: measurement.metricSuffix
                 }
             } ?: String.EMPTY
         }

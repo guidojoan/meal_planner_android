@@ -1,7 +1,7 @@
 package com.astutify.mealplanner.core.data
 
-import com.astutify.mealplanner.core.entity.data.error.ApiErrorManager
-import com.astutify.mealplanner.core.entity.data.mapper.toDomain
+import com.astutify.mealplanner.core.model.data.error.ApiErrorManager
+import com.astutify.mealplanner.core.model.data.mapper.toDomain
 import io.reactivex.Single.error
 import io.reactivex.Single.just
 import javax.inject.Inject

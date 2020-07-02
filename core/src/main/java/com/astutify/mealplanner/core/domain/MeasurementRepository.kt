@@ -1,6 +1,6 @@
 package com.astutify.mealplanner.core.domain
 
-import com.astutify.mealplanner.core.entity.domain.Measurement
+import com.astutify.mealplanner.core.model.domain.Measurement
 import io.reactivex.Single
 
 interface MeasurementRepository {

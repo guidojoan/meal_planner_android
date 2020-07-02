@@ -1,7 +1,7 @@
 package com.astutify.mealplanner.recipe.presentation.edit
 
 import com.astutify.mealplanner.core.domain.GetRecipeCategoriesUseCase
-import com.astutify.mealplanner.core.entity.data.error.BadRequest
+import com.astutify.mealplanner.core.model.data.error.BadRequest
 import com.astutify.mealplanner.coreui.model.ActivityResult
 import com.astutify.mealplanner.coreui.model.RecipeViewModel
 import com.astutify.mealplanner.coreui.model.mapper.toDomain

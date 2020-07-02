@@ -9,7 +9,7 @@ import com.astutify.mealplanner.coreui.model.IngredientPackageViewModel
 import com.astutify.mealplanner.coreui.model.IngredientViewModel
 import com.astutify.mealplanner.coreui.model.MeasurementViewModel
 import com.astutify.mealplanner.coreui.presentation.utils.AfterTextChangeWatcher
-import com.astutify.mealplanner.coreui.presentation.control.ChipCollection
+import com.astutify.mealplanner.coreui.presentation.control.ItemWithMeasurementCollection
 import com.astutify.mealplanner.coreui.presentation.control.hideButton
 import com.astutify.mealplanner.coreui.presentation.control.showButton
 import com.astutify.mealplanner.coreui.presentation.mvi.Feature
@@ -75,8 +75,8 @@ class EditIngredientActivity :
     private fun initView() {
         view.packageSelector.setListener {
             when (it) {
-                ChipCollection.Event.OnAddClicked -> showAddPackageDialog()
-                is ChipCollection.Event.OnRemoveClicked -> eventsRelay.accept(
+                ItemWithMeasurementCollection.Event.OnAddClicked -> showAddPackageDialog()
+                is ItemWithMeasurementCollection.Event.OnRemoveClicked -> eventsRelay.accept(
                     EditIngredientView.Intent.PackageRemoved(
                         (it.item as IngredientPackageViewModel).id
                     )
@@ -86,8 +86,9 @@ class EditIngredientActivity :
 
         view.customMeasurementSelector.setListener {
             when (it) {
-                ChipCollection.Event.OnAddClicked -> eventsRelay.accept(EditIngredientView.Intent.ClickAddCustomMeasurement)
-                is ChipCollection.Event.OnRemoveClicked -> eventsRelay.accept(
+                ItemWithMeasurementCollection.Event.OnAddClicked ->
+                    eventsRelay.accept(EditIngredientView.Intent.ClickAddCustomMeasurement)
+                is ItemWithMeasurementCollection.Event.OnRemoveClicked -> eventsRelay.accept(
                     EditIngredientView.Intent.CustomMeasurementRemoved(
                         (it.item as IngredientMeasurementViewModel).measurement
                     )

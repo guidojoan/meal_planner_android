@@ -3,7 +3,7 @@
     <declare-styleable name="SingleSelectionCollection">
         <attr name="title" format="string" />
     </declare-styleable>
-    <declare-styleable name="ChipCollection">
+    <declare-styleable name="ItemWithMeasurementCollection">
         <attr name="listTitle" format="string" />
     </declare-styleable>
     <declare-styleable name="NumberPicker">

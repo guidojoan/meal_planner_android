@@ -1,8 +1,8 @@
 package com.astutify.mealplanner.userprofile.domain
 
-import com.astutify.mealplanner.core.entity.domain.About
-import com.astutify.mealplanner.core.entity.domain.House
-import com.astutify.mealplanner.core.entity.domain.User
+import com.astutify.mealplanner.core.model.domain.About
+import com.astutify.mealplanner.core.model.domain.House
+import com.astutify.mealplanner.core.model.domain.User
 import io.reactivex.Single
 
 interface HouseRepository {
