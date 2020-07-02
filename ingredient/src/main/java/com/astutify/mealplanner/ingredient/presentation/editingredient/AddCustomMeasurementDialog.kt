@@ -9,10 +9,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import com.astutify.mealplanner.core.extension.getAsFloat
 import com.astutify.mealplanner.coreui.model.MeasurementViewModel
-import com.astutify.mealplanner.coreui.presentation.control.chip.ChipChoice
 import com.astutify.mealplanner.ingredient.R
 import com.astutify.mealplanner.ingredient.databinding.DialogAddCustomMeasurementBinding
-import com.google.android.material.chip.Chip
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class AddCustomMeasurementDialog : DialogFragment() {
@@ -36,32 +34,13 @@ class AddCustomMeasurementDialog : DialogFragment() {
 
     private fun initView(): View {
         view = DialogAddCustomMeasurementBinding.inflate(LayoutInflater.from(context), null, false)
-        primaryMeasurement?.let { view.quantityLayout.suffixText = it.getSuffix() }
-        initMeasurementSelector()
+        initMeasurements()
         return view.root
     }
 
-    private fun initMeasurementSelector() {
-        measurements.forEach {
-            val chip =
-                ChipChoice(
-                    requireContext()
-                )
-            chip.tag = it
-            chip.text = it.toString()
-            view.measurementSelector.addView(chip)
-        }
-        setSelected(measurements.first())
-    }
-
-    private fun setSelected(item: Any) {
-        view.measurementSelector.findViewWithTag<Chip>(item)?.let {
-            view.measurementSelector.check(it.id)
-        }
-    }
-
-    private fun getSelectedMeasurement(): MeasurementViewModel {
-        return view.measurementSelector.findViewById<Chip>(view.measurementSelector.checkedChipId).tag as MeasurementViewModel
+    private fun initMeasurements() {
+        primaryMeasurement?.let { view.quantityLayout.suffixText = it.getSuffix() }
+        view.measurementSelector.setOptions(measurements, measurements.first())
     }
 
     override fun onResume() {
@@ -76,8 +55,15 @@ class AddCustomMeasurementDialog : DialogFragment() {
         view.quantity.error = null
         if (validateQuantity()) {
             dialog?.dismiss()
-            listener.addCustomMeasurement(getSelectedMeasurement(), getQuantityValue())
+            listener.addCustomMeasurement(
+                getSelectedMeasurement(),
+                getQuantityValue()
+            )
         }
+    }
+
+    private fun getSelectedMeasurement(): MeasurementViewModel {
+        return view.measurementSelector.getSelected() as MeasurementViewModel
     }
 
     private fun getQuantityValue() = view.quantity.text!!.getAsFloat()
