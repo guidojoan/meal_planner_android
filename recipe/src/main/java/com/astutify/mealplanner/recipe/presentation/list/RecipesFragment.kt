@@ -12,8 +12,8 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.astutify.mealplanner.AppConstants
-import com.astutify.mealplanner.coreui.entity.ActivityResult
-import com.astutify.mealplanner.coreui.entity.RecipeViewModel
+import com.astutify.mealplanner.coreui.model.ActivityResult
+import com.astutify.mealplanner.coreui.model.RecipeViewModel
 import com.astutify.mealplanner.recipe.R
 import com.astutify.mealplanner.recipe.RecipeComponentProvider
 import com.astutify.mealplanner.recipe.RecipeOutNavigatorModule

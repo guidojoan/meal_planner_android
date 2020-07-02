@@ -1,8 +1,7 @@
-package com.astutify.mealplanner.coreui.entity
+package com.astutify.mealplanner.coreui.model
 
 import android.os.Parcelable
 import com.astutify.mealplanner.core.extension.EMPTY
-import com.astutify.mealplanner.coreui.presentation.QuantityFormatter
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize

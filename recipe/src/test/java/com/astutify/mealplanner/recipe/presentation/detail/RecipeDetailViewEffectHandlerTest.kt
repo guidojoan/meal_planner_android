@@ -1,6 +1,6 @@
 package com.astutify.mealplanner.recipe.presentation.detail
 
-import com.astutify.mealplanner.coreui.presentation.TestHelper
+import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
 import com.astutify.mealplanner.recipe.Navigator
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify

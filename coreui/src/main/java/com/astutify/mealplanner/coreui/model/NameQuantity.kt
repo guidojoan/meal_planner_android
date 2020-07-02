@@ -1,4 +1,4 @@
-package com.astutify.mealplanner.coreui.entity
+package com.astutify.mealplanner.coreui.model
 
 interface NameQuantity {
     val name: String

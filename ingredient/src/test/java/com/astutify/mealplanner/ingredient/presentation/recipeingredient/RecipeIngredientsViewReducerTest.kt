@@ -1,7 +1,7 @@
 package com.astutify.mealplanner.ingredient.presentation.recipeingredient
 
-import com.astutify.mealplanner.coreui.entity.IngredientViewModel
-import com.astutify.mealplanner.coreui.presentation.TestHelper
+import com.astutify.mealplanner.coreui.model.IngredientViewModel
+import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
 import com.astutify.mealplanner.coreui.presentation.mvi.Next
 import com.astutify.mealplanner.coreui.presentation.mvi.State
 import org.junit.Test

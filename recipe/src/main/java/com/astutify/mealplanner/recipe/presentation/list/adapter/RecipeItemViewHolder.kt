@@ -1,7 +1,7 @@
 package com.astutify.mealplanner.recipe.presentation.list.adapter
 
 import androidx.recyclerview.widget.RecyclerView
-import com.astutify.mealplanner.coreui.entity.RecipeViewModel
+import com.astutify.mealplanner.coreui.model.RecipeViewModel
 import com.astutify.mealplanner.recipe.databinding.ListItemRecipeBinding
 import com.bumptech.glide.Glide
 

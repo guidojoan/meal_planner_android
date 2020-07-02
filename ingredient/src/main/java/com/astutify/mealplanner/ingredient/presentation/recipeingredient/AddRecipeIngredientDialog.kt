@@ -8,16 +8,17 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import com.astutify.mealplanner.core.extension.getAsFloatNullable
-import com.astutify.mealplanner.coreui.entity.IngredientViewModel
-import com.astutify.mealplanner.coreui.entity.MeasurementViewModel
-import com.astutify.mealplanner.coreui.presentation.control.ChipSingleSelectionView
+import com.astutify.mealplanner.coreui.model.IngredientCategoryViewModel
+import com.astutify.mealplanner.coreui.model.IngredientViewModel
+import com.astutify.mealplanner.coreui.model.MeasurementViewModel
+import com.astutify.mealplanner.coreui.presentation.control.ChipCollectionSingleSelection
 import com.astutify.mealplanner.ingredient.R
 import com.astutify.mealplanner.ingredient.databinding.DialogRecipeIngredientBinding
+import com.astutify.mealplanner.ingredient.presentation.editingredient.EditIngredientView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class AddRecipeIngredientDialog :
-    DialogFragment(),
-    ChipSingleSelectionView.ChipSingleSelectionViewListener {
+    DialogFragment(){
 
     private lateinit var view: DialogRecipeIngredientBinding
     val ingredient: IngredientViewModel by lazy {
@@ -35,7 +36,10 @@ class AddRecipeIngredientDialog :
 
     private fun initView(): View {
         view = DialogRecipeIngredientBinding.inflate(LayoutInflater.from(context), null, false)
-        view.measurementSelector.setListener(this)
+        view.measurementSelector.setListener{
+            view.quantityLayout.suffixText = (it as MeasurementViewModel).getSuffix()
+        }
+
         initMeasurementSelector()
         view.ingredientName.text = ingredient.name
         return view.root
@@ -45,10 +49,6 @@ class AddRecipeIngredientDialog :
         val measurements = ingredient.measurements.map { it.measurement }
         view.measurementSelector.setOptions(measurements)
         view.quantityLayout.suffixText = measurements.first().getSuffix()
-    }
-
-    override fun ChipSelected(item: Any) {
-        view.quantityLayout.suffixText = (item as MeasurementViewModel).getSuffix()
     }
 
     override fun onResume() {

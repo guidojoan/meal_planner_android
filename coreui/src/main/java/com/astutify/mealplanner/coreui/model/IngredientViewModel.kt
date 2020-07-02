@@ -1,4 +1,4 @@
-package com.astutify.mealplanner.coreui.entity
+package com.astutify.mealplanner.coreui.model
 
 import android.os.Parcelable
 import com.astutify.mealplanner.core.extension.EMPTY
@@ -48,7 +48,7 @@ data class IngredientViewModel(
     }
 
     fun copyWithOutCustomMeasurement(customMeasurementId: String): IngredientViewModel {
-        return copy(measurements = measurements.filterNot { it.measurement?.id == customMeasurementId })
+        return copy(measurements = measurements.filterNot { it.measurement.id == customMeasurementId })
     }
 
     fun copyWithCategory(category: IngredientCategoryViewModel) = copy(category = category)

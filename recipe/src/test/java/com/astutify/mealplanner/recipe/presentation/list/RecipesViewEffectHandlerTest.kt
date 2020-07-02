@@ -1,7 +1,7 @@
 package com.astutify.mealplanner.recipe.presentation.list
 
 import com.astutify.mealplanner.core.authentication.SessionManager
-import com.astutify.mealplanner.coreui.presentation.TestHelper
+import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
 import com.astutify.mealplanner.recipe.Navigator
 import com.astutify.mealplanner.recipe.RecipeOutNavigator
 import com.astutify.mealplanner.recipe.domain.GetRecipesNextPageUseCase

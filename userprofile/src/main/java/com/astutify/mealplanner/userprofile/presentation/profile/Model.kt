@@ -1,9 +1,9 @@
 package com.astutify.mealplanner.userprofile.presentation.profile
 
 import android.os.Parcelable
-import com.astutify.mealplanner.coreui.entity.AboutViewModel
-import com.astutify.mealplanner.coreui.entity.HouseViewModel
-import com.astutify.mealplanner.coreui.entity.UserViewModel
+import com.astutify.mealplanner.coreui.model.AboutViewModel
+import com.astutify.mealplanner.coreui.model.HouseViewModel
+import com.astutify.mealplanner.coreui.model.UserViewModel
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize

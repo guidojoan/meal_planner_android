@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.astutify.mealplanner.core.extension.getAsInt
-import com.astutify.mealplanner.coreui.entity.HouseViewModel
+import com.astutify.mealplanner.coreui.model.HouseViewModel
 import com.astutify.mealplanner.userprofile.R
 import com.astutify.mealplanner.userprofile.UserProfileComponentProvider
 import com.astutify.mealplanner.userprofile.UserProfileOutNavigatorModule

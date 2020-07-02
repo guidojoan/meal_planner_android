@@ -1,6 +1,6 @@
 package com.astutify.mealplanner.ingredient.presentation.editingredient
 
-import com.astutify.mealplanner.coreui.entity.IngredientPackageViewModel
+import com.astutify.mealplanner.coreui.model.IngredientPackageViewModel
 import com.astutify.mealplanner.coreui.presentation.mvi.Effect
 import com.astutify.mealplanner.coreui.presentation.mvi.Reducer
 import com.astutify.mealplanner.coreui.presentation.mvi.ReducerResult

@@ -1,6 +1,6 @@
 package com.astutify.mealplanner.userprofile.presentation.profile
 
-import com.astutify.mealplanner.coreui.entity.mapper.toPresentation
+import com.astutify.mealplanner.coreui.model.mapper.toPresentation
 import com.astutify.mealplanner.coreui.presentation.mvi.EffectHandler
 import com.astutify.mealplanner.userprofile.UserProfileOutNavigator
 import com.astutify.mealplanner.userprofile.domain.GetAboutUseCase

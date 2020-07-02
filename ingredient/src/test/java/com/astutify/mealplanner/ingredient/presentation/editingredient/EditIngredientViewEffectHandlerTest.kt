@@ -2,10 +2,10 @@ package com.astutify.mealplanner.ingredient.presentation.editingredient
 
 import com.astutify.mealplanner.core.domain.GetIngredientCategoriesUseCase
 import com.astutify.mealplanner.core.domain.GetMeasurementsUseCase
-import com.astutify.mealplanner.coreui.entity.ActivityResult
-import com.astutify.mealplanner.coreui.entity.IngredientViewModel
-import com.astutify.mealplanner.coreui.entity.mapper.toPresentation
-import com.astutify.mealplanner.coreui.presentation.TestHelper
+import com.astutify.mealplanner.coreui.model.ActivityResult
+import com.astutify.mealplanner.coreui.model.IngredientViewModel
+import com.astutify.mealplanner.coreui.model.mapper.toPresentation
+import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
 import com.astutify.mealplanner.ingredient.Navigator
 import com.astutify.mealplanner.ingredient.domain.AddIngredientUseCase
 import com.astutify.mealplanner.ingredient.domain.UpdateIngredientUseCase

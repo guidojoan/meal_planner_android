@@ -1,7 +1,7 @@
 package com.astutify.mealplanner.recipe.presentation.list
 
 import com.astutify.mealplanner.core.authentication.SessionManager
-import com.astutify.mealplanner.coreui.entity.mapper.toPresentation
+import com.astutify.mealplanner.coreui.model.mapper.toPresentation
 import com.astutify.mealplanner.coreui.presentation.mvi.EffectHandler
 import com.astutify.mealplanner.recipe.Navigator
 import com.astutify.mealplanner.recipe.RecipeOutNavigator

@@ -1,8 +1,8 @@
 package com.astutify.mealplanner.ingredient.presentation.list.adapter
 
 import androidx.recyclerview.widget.RecyclerView
-import com.astutify.mealplanner.coreui.entity.IngredientViewModel
-import com.astutify.mealplanner.coreui.utils.UIUtils
+import com.astutify.mealplanner.coreui.model.IngredientViewModel
+import com.astutify.mealplanner.coreui.presentation.utils.UIUtils
 import com.astutify.mealplanner.ingredient.databinding.ItemIngredientBinding
 
 class IngredientItemViewHolder(val view: ItemIngredientBinding) :

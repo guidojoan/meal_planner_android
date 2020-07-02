@@ -1,6 +1,6 @@
 package com.astutify.mealplanner.ingredient.presentation.list
 
-import com.astutify.mealplanner.coreui.entity.mapper.toPresentation
+import com.astutify.mealplanner.coreui.model.mapper.toPresentation
 import com.astutify.mealplanner.coreui.presentation.mvi.EffectHandler
 import com.astutify.mealplanner.ingredient.Navigator
 import com.astutify.mealplanner.ingredient.domain.GetIngredientsNexPageUseCase

@@ -1,6 +1,6 @@
 package com.astutify.mealplanner.userprofile.presentation.house
 
-import com.astutify.mealplanner.coreui.entity.HouseViewModel
+import com.astutify.mealplanner.coreui.model.HouseViewModel
 import com.astutify.mealplanner.coreui.presentation.mvi.Effect
 import com.astutify.mealplanner.coreui.presentation.mvi.Next
 import com.astutify.mealplanner.coreui.presentation.mvi.Reducer

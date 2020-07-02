@@ -6,9 +6,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import com.astutify.mealplanner.AppConstants
-import com.astutify.mealplanner.coreui.entity.ActivityResult
-import com.astutify.mealplanner.coreui.entity.IngredientViewModel
-import com.astutify.mealplanner.coreui.entity.MeasurementViewModel
+import com.astutify.mealplanner.coreui.model.ActivityResult
+import com.astutify.mealplanner.coreui.model.IngredientViewModel
+import com.astutify.mealplanner.coreui.model.MeasurementViewModel
 import com.astutify.mealplanner.ingredient.IngredientComponentProvider
 import com.astutify.mealplanner.ingredient.databinding.ViewRecipeIngredientBinding
 import com.astutify.mealplanner.ingredient.presentation.list.adapter.IngredientsListView

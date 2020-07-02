@@ -1,4 +1,4 @@
-package com.astutify.mealplanner.coreui.presentation
+package com.astutify.mealplanner.coreui.presentation.utils
 
 import com.astutify.mealplanner.core.entity.data.error.BadRequest
 import com.astutify.mealplanner.core.entity.data.error.ErrorItem
@@ -16,18 +16,18 @@ import com.astutify.mealplanner.core.entity.domain.Recipe
 import com.astutify.mealplanner.core.entity.domain.RecipeCategory
 import com.astutify.mealplanner.core.entity.domain.RecipeIngredient
 import com.astutify.mealplanner.core.entity.domain.User
-import com.astutify.mealplanner.coreui.entity.AboutViewModel
-import com.astutify.mealplanner.coreui.entity.HouseViewModel
-import com.astutify.mealplanner.coreui.entity.IngredientCategoryViewModel
-import com.astutify.mealplanner.coreui.entity.IngredientGroupViewModel
-import com.astutify.mealplanner.coreui.entity.IngredientMeasurementViewModel
-import com.astutify.mealplanner.coreui.entity.IngredientPackageViewModel
-import com.astutify.mealplanner.coreui.entity.IngredientViewModel
-import com.astutify.mealplanner.coreui.entity.MeasurementViewModel
-import com.astutify.mealplanner.coreui.entity.RecipeCategoryViewModel
-import com.astutify.mealplanner.coreui.entity.RecipeIngredientViewModel
-import com.astutify.mealplanner.coreui.entity.RecipeViewModel
-import com.astutify.mealplanner.coreui.entity.UserViewModel
+import com.astutify.mealplanner.coreui.model.AboutViewModel
+import com.astutify.mealplanner.coreui.model.HouseViewModel
+import com.astutify.mealplanner.coreui.model.IngredientCategoryViewModel
+import com.astutify.mealplanner.coreui.model.IngredientGroupViewModel
+import com.astutify.mealplanner.coreui.model.IngredientMeasurementViewModel
+import com.astutify.mealplanner.coreui.model.IngredientPackageViewModel
+import com.astutify.mealplanner.coreui.model.IngredientViewModel
+import com.astutify.mealplanner.coreui.model.MeasurementViewModel
+import com.astutify.mealplanner.coreui.model.RecipeCategoryViewModel
+import com.astutify.mealplanner.coreui.model.RecipeIngredientViewModel
+import com.astutify.mealplanner.coreui.model.RecipeViewModel
+import com.astutify.mealplanner.coreui.model.UserViewModel
 
 class TestHelper {
 

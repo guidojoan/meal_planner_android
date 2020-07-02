@@ -7,18 +7,18 @@ import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.astutify.mealplanner.coreui.R
 import com.astutify.mealplanner.coreui.databinding.ViewChipItemsBinding
-import com.astutify.mealplanner.coreui.entity.MeasurementViewModel
-import com.astutify.mealplanner.coreui.entity.NameQuantity
-import com.astutify.mealplanner.coreui.presentation.QuantityFormatter
+import com.astutify.mealplanner.coreui.model.MeasurementViewModel
+import com.astutify.mealplanner.coreui.model.NameQuantity
+import com.astutify.mealplanner.coreui.model.QuantityFormatter
 import com.astutify.mealplanner.coreui.presentation.control.chip.ChipEntry
 
-class ChipItemsView(context: Context, attrs: AttributeSet?) : ConstraintLayout(context, attrs) {
+class ChipCollection(context: Context, attrs: AttributeSet?) : ConstraintLayout(context, attrs) {
 
+    private var view = ViewChipItemsBinding.inflate(LayoutInflater.from(context), this, true)
     private var titleText: String? = null
     private var listener: ((Event) -> Unit)? = null
     private var items: List<NameQuantity> = emptyList()
     private var primaryMeasurement: MeasurementViewModel? = null
-    private var view = ViewChipItemsBinding.inflate(LayoutInflater.from(context), this, true)
 
     init {
         if (attrs != null) {
@@ -27,8 +27,8 @@ class ChipItemsView(context: Context, attrs: AttributeSet?) : ConstraintLayout(c
     }
 
     private fun loadAttributes(context: Context, attrs: AttributeSet) {
-        val attributeArray = context.obtainStyledAttributes(attrs, R.styleable.ChipItemsView)
-        titleText = attributeArray.getString(R.styleable.ChipItemsView_listTitle)
+        val attributeArray = context.obtainStyledAttributes(attrs, R.styleable.ChipCollection)
+        titleText = attributeArray.getString(R.styleable.ChipCollection_listTitle)
         attributeArray.recycle()
     }
 
@@ -55,11 +55,12 @@ class ChipItemsView(context: Context, attrs: AttributeSet?) : ConstraintLayout(c
         view.addButton.visibility = if (enabled) View.VISIBLE else View.GONE
     }
 
+    fun setListener(listener: (Event) -> Unit) {
+        this.listener = listener
+    }
+
     private fun add(item: NameQuantity, measurement: MeasurementViewModel?) {
-        val chip =
-            ChipEntry(
-                context
-            )
+        val chip = ChipEntry(context)
         chip.tag = item
         chip.text = getName(item, measurement)
         chip.setOnCloseIconClickListener {
@@ -74,10 +75,6 @@ class ChipItemsView(context: Context, attrs: AttributeSet?) : ConstraintLayout(c
 
     private fun getName(item: NameQuantity, measurement: MeasurementViewModel?): String {
         return "${item.name} ${QuantityFormatter.formatQuantity(item.quantity, measurement)}"
-    }
-
-    fun setListener(listener: (Event) -> Unit) {
-        this.listener = listener
     }
 
     sealed class Event {

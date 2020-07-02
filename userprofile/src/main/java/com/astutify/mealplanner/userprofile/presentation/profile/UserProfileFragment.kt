@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.astutify.mealplanner.coreui.entity.AboutViewModel
-import com.astutify.mealplanner.coreui.presentation.AlertMessageBuilder
+import com.astutify.mealplanner.coreui.model.AboutViewModel
+import com.astutify.mealplanner.coreui.presentation.view.AlertMessageView
 import com.astutify.mealplanner.userprofile.BuildConfig
 import com.astutify.mealplanner.userprofile.R
 import com.astutify.mealplanner.userprofile.UserProfileComponentProvider
@@ -27,7 +27,7 @@ class UserProfileFragment : Fragment(), UserProfileView {
     lateinit var controller: UserProfileViewController
 
     @Inject
-    lateinit var alertMessageBuilder: AlertMessageBuilder
+    lateinit var alertMessageView: AlertMessageView
 
     lateinit var view: ViewUserProfileBinding
 
@@ -130,7 +130,7 @@ class UserProfileFragment : Fragment(), UserProfileView {
     }
 
     private fun showAbout(about: AboutViewModel) {
-        alertMessageBuilder.showAlert(
+        alertMessageView.showAlert(
             getString(R.string.about),
             message = getString(
                 R.string.about_body,

@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.astutify.mealplanner.core.extension.EMPTY
-import com.astutify.mealplanner.coreui.entity.IngredientViewModel
+import com.astutify.mealplanner.coreui.model.IngredientViewModel
 import com.astutify.mealplanner.coreui.presentation.recyclerview.EndlessRecyclerViewScrollListener
 import com.astutify.mealplanner.ingredient.R
 

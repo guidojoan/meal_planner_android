@@ -1,4 +1,4 @@
-package com.astutify.mealplanner.coreui.presentation
+package com.astutify.mealplanner.coreui.presentation.view
 
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import javax.inject.Inject
 
 @Mockable
-class AlertMessageBuilder @Inject constructor(
+class AlertMessageView @Inject constructor(
     private val context: AppCompatActivity
 ) {
     fun showAlert(

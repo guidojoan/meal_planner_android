@@ -5,8 +5,8 @@ import android.util.AttributeSet
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.astutify.mealplanner.coreui.entity.IngredientGroupViewModel
-import com.astutify.mealplanner.coreui.entity.RecipeIngredientViewModel
+import com.astutify.mealplanner.coreui.model.IngredientGroupViewModel
+import com.astutify.mealplanner.coreui.model.RecipeIngredientViewModel
 import com.astutify.mealplanner.coreui.presentation.recyclerview.SwipeToDeleteCallback
 import com.astutify.mealplanner.recipe.R
 

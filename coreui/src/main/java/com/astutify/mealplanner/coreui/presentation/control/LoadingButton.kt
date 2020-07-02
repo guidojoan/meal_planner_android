@@ -7,7 +7,7 @@ import android.text.SpannableString
 import android.text.Spanned
 import android.util.AttributeSet
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
-import com.astutify.mealplanner.coreui.presentation.DrawableSpan
+import com.astutify.mealplanner.coreui.presentation.view.DrawableSpan
 import com.google.android.material.button.MaterialButton
 
 class LoadingButton(context: Context, attrs: AttributeSet?) : MaterialButton(context, attrs) {

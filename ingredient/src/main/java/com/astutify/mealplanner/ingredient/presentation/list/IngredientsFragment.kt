@@ -13,8 +13,8 @@ import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.astutify.mealplanner.AppConstants
 import com.astutify.mealplanner.core.authentication.SessionManager
-import com.astutify.mealplanner.coreui.entity.ActivityResult
-import com.astutify.mealplanner.coreui.entity.IngredientViewModel
+import com.astutify.mealplanner.coreui.model.ActivityResult
+import com.astutify.mealplanner.coreui.model.IngredientViewModel
 import com.astutify.mealplanner.ingredient.IngredientComponentProvider
 import com.astutify.mealplanner.ingredient.R
 import com.astutify.mealplanner.ingredient.databinding.ViewListIngredientsBinding

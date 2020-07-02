@@ -1,8 +1,8 @@
 package com.astutify.mealplanner.ingredient.presentation.recipeingredient
 
-import com.astutify.mealplanner.coreui.entity.ActivityResult
-import com.astutify.mealplanner.coreui.entity.RecipeIngredientViewModel
-import com.astutify.mealplanner.coreui.entity.mapper.toPresentation
+import com.astutify.mealplanner.coreui.model.ActivityResult
+import com.astutify.mealplanner.coreui.model.RecipeIngredientViewModel
+import com.astutify.mealplanner.coreui.model.mapper.toPresentation
 import com.astutify.mealplanner.coreui.presentation.mvi.EffectHandler
 import com.astutify.mealplanner.ingredient.Navigator
 import com.astutify.mealplanner.ingredient.domain.GetIngredientsNexPageUseCase

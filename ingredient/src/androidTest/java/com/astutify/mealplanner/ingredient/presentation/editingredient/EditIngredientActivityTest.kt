@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.rule.ActivityTestRule
 import com.astutify.mealplanner.MockApp
-import com.astutify.mealplanner.coreui.entity.IngredientViewModel
-import com.astutify.mealplanner.coreui.presentation.TestHelper
+import com.astutify.mealplanner.coreui.model.IngredientViewModel
+import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
 import com.nhaarman.mockitokotlin2.mock
 import org.junit.Rule
 

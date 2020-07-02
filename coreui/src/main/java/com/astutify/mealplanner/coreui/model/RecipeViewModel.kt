@@ -1,4 +1,4 @@
-package com.astutify.mealplanner.coreui.entity
+package com.astutify.mealplanner.coreui.model
 
 import android.os.Parcelable
 import com.astutify.mealplanner.core.extension.EMPTY
@@ -86,7 +86,7 @@ data class RecipeViewModel(
     fun copyWithSeenStatus() = copy(status = Status.SEEN)
 
     fun saveEnabled(): Boolean {
-        return directions.isNotBlank() && name.isNotBlank() && ingredientsNotEmpty() && recipeCategory != null
+        return directions.isNotBlank() && name.isNotBlank() && ingredientsNotEmpty() && recipeCategory.id.isNotBlank()
     }
 
     private fun ingredientsNotEmpty(): Boolean {

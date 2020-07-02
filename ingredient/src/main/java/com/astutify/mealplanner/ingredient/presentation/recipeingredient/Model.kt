@@ -1,8 +1,8 @@
 package com.astutify.mealplanner.ingredient.presentation.recipeingredient
 
 import android.os.Parcelable
-import com.astutify.mealplanner.coreui.entity.IngredientViewModel
-import com.astutify.mealplanner.coreui.entity.MeasurementViewModel
+import com.astutify.mealplanner.coreui.model.IngredientViewModel
+import com.astutify.mealplanner.coreui.model.MeasurementViewModel
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize

@@ -5,9 +5,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import com.astutify.mealplanner.AppConstants
 import com.astutify.mealplanner.core.Mockable
-import com.astutify.mealplanner.coreui.entity.ActivityResult
-import com.astutify.mealplanner.coreui.entity.IngredientViewModel
-import com.astutify.mealplanner.coreui.entity.RecipeIngredientViewModel
+import com.astutify.mealplanner.coreui.model.ActivityResult
+import com.astutify.mealplanner.coreui.model.IngredientViewModel
+import com.astutify.mealplanner.coreui.model.RecipeIngredientViewModel
 import com.astutify.mealplanner.ingredient.presentation.editingredient.EditIngredientActivity
 import com.astutify.mealplanner.ingredient.presentation.recipeingredient.RecipeIngredientActivity
 import javax.inject.Inject

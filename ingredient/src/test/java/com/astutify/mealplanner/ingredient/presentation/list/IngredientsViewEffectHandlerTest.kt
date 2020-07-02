@@ -1,6 +1,6 @@
 package com.astutify.mealplanner.ingredient.presentation.list
 
-import com.astutify.mealplanner.coreui.presentation.TestHelper
+import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
 import com.astutify.mealplanner.ingredient.Navigator
 import com.astutify.mealplanner.ingredient.domain.GetIngredientsNexPageUseCase
 import com.astutify.mealplanner.ingredient.domain.GetIngredientsUseCase

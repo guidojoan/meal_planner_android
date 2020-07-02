@@ -1,6 +1,6 @@
 package com.astutify.mealplanner.recipe.presentation.detail
 
-import com.astutify.mealplanner.coreui.entity.RecipeViewModel
+import com.astutify.mealplanner.coreui.model.RecipeViewModel
 import com.astutify.mealplanner.coreui.presentation.mvi.Feature
 import javax.inject.Inject
 

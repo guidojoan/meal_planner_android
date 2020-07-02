@@ -1,7 +1,6 @@
-package com.astutify.mealplanner.coreui.presentation
+package com.astutify.mealplanner.coreui.model
 
 import com.astutify.mealplanner.core.extension.EMPTY
-import com.astutify.mealplanner.coreui.entity.MeasurementViewModel
 import java.text.DecimalFormat
 import java.util.Locale
 
@@ -11,17 +10,31 @@ class QuantityFormatter {
         fun formatQuantity(quantity: Float, measurement: MeasurementViewModel?): String {
             return when {
                 quantity == 0f -> String.EMPTY
-                quantity > 0f && quantity < 1f -> "${formatAsQuantity2(quantity)}  ${getSuffix(
+                quantity > 0f && quantity < 1f -> "${formatAsQuantity2(
+                    quantity
+                )}  ${getSuffix(
                     measurement
                 )}"
-                quantity == 1f -> "${formatAsQuantity(quantity)}  ${getSuffix(measurement)}"
-                quantity > 1f && quantity < 1000f -> "${formatAsQuantity(quantity)}  ${getSuffixPlural(
+                quantity == 1f -> "${formatAsQuantity(
+                    quantity
+                )}  ${getSuffix(
                     measurement
                 )}"
-                quantity == 1000f -> "${formatAsQuantity(quantity / 1000)}   ${get1000Suffix(
+                quantity > 1f && quantity < 1000f -> "${formatAsQuantity(
+                    quantity
+                )}  ${getSuffixPlural(
                     measurement
                 )}"
-                else -> "${formatAsQuantity(quantity / 1000)}   ${get1000SuffixPlural(measurement)}"
+                quantity == 1000f -> "${formatAsQuantity(
+                    quantity / 1000
+                )}   ${get1000Suffix(
+                    measurement
+                )}"
+                else -> "${formatAsQuantity(
+                    quantity / 1000
+                )}   ${get1000SuffixPlural(
+                    measurement
+                )}"
             }
         }
 

@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.astutify.mealplanner.coreui.entity.RecipeViewModel
+import com.astutify.mealplanner.coreui.model.RecipeViewModel
 import com.astutify.mealplanner.recipe.databinding.ListItemRecipeBinding
 
 class RecipesAdapter : ListAdapter<RecipeViewModel, RecyclerView.ViewHolder>(diffCallback) {

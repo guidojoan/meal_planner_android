@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.astutify.mealplanner.coreui.entity.RecipeViewModel
+import com.astutify.mealplanner.coreui.model.RecipeViewModel
 import com.astutify.mealplanner.coreui.presentation.recyclerview.EndlessRecyclerViewScrollListener
 import com.astutify.mealplanner.coreui.presentation.recyclerview.GridSpacingItemDecoration
 import com.astutify.mealplanner.recipe.R

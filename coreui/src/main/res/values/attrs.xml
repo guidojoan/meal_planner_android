@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="SingleSelectionView">
+    <declare-styleable name="SingleSelectionCollection">
         <attr name="title" format="string" />
     </declare-styleable>
-    <declare-styleable name="ChipItemsView">
+    <declare-styleable name="ChipCollection">
         <attr name="listTitle" format="string" />
     </declare-styleable>
     <declare-styleable name="NumberPicker">

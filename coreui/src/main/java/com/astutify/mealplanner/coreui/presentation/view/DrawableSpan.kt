@@ -1,4 +1,4 @@
-package com.astutify.mealplanner.coreui.presentation
+package com.astutify.mealplanner.coreui.presentation.view
 
 import android.graphics.Canvas
 import android.graphics.Color

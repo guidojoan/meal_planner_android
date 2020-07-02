@@ -3,7 +3,7 @@ package com.astutify.mealplanner.recipe.data
 import android.net.Uri
 import com.astutify.mealplanner.core.entity.data.RecipeEntity
 import com.astutify.mealplanner.core.entity.data.error.ApiErrorManager
-import com.astutify.mealplanner.coreui.utils.ImagePickerUtils
+import com.astutify.mealplanner.coreui.presentation.utils.ImagePickerUtils
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import io.reactivex.Single.error

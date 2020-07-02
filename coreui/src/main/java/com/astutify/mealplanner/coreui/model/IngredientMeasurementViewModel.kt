@@ -1,4 +1,4 @@
-package com.astutify.mealplanner.coreui.entity
+package com.astutify.mealplanner.coreui.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

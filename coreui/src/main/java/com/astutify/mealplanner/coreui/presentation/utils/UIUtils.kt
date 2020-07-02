@@ -1,4 +1,4 @@
-package com.astutify.mealplanner.coreui.utils
+package com.astutify.mealplanner.coreui.presentation.utils
 
 import android.content.Context
 import androidx.core.content.ContextCompat

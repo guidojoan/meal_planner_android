@@ -8,7 +8,7 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import com.astutify.mealplanner.core.extension.getAsFloat
-import com.astutify.mealplanner.coreui.entity.MeasurementViewModel
+import com.astutify.mealplanner.coreui.model.MeasurementViewModel
 import com.astutify.mealplanner.coreui.presentation.control.chip.ChipChoice
 import com.astutify.mealplanner.ingredient.R
 import com.astutify.mealplanner.ingredient.databinding.DialogAddCustomMeasurementBinding

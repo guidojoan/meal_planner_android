@@ -1,9 +1,9 @@
 package com.astutify.mealplanner.userprofile.presentation.house
 
 import com.astutify.mealplanner.core.entity.data.error.ApiException
-import com.astutify.mealplanner.coreui.entity.HouseViewModel
-import com.astutify.mealplanner.coreui.entity.mapper.toDomain
-import com.astutify.mealplanner.coreui.entity.mapper.toPresentation
+import com.astutify.mealplanner.coreui.model.HouseViewModel
+import com.astutify.mealplanner.coreui.model.mapper.toDomain
+import com.astutify.mealplanner.coreui.model.mapper.toPresentation
 import com.astutify.mealplanner.coreui.presentation.mvi.EffectHandler
 import com.astutify.mealplanner.userprofile.UserProfileOutNavigator
 import com.astutify.mealplanner.userprofile.domain.CreateHouseUseCase

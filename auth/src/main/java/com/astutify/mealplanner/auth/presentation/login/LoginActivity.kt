@@ -10,7 +10,7 @@ import com.astutify.mealplanner.auth.BuildConfig
 import com.astutify.mealplanner.auth.R
 import com.astutify.mealplanner.auth.databinding.ViewLoginBinding
 import com.astutify.mealplanner.core.entity.data.GoogleUser
-import com.astutify.mealplanner.coreui.presentation.AlertMessageBuilder
+import com.astutify.mealplanner.coreui.presentation.view.AlertMessageView
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
     lateinit var controller: LoginViewController
 
     @Inject
-    lateinit var alert: AlertMessageBuilder
+    lateinit var alert: AlertMessageView
 
     private val eventsRelay: Relay<LoginView.Intent> = PublishRelay.create()
 

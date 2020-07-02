@@ -1,6 +1,6 @@
 package com.astutify.mealplanner.ingredient.presentation.list
 
-import com.astutify.mealplanner.coreui.presentation.TestHelper
+import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
 import org.junit.Test
 
 class IngredientsVewReducerTest {

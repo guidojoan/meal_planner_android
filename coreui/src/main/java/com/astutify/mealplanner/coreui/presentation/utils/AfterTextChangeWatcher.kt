@@ -1,4 +1,4 @@
-package com.astutify.mealplanner.coreui.presentation
+package com.astutify.mealplanner.coreui.presentation.utils
 
 import android.text.TextWatcher
 

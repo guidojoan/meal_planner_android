@@ -11,17 +11,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
 import com.astutify.mealplanner.AppConstants
-import com.astutify.mealplanner.coreui.entity.ActivityResult
-import com.astutify.mealplanner.coreui.entity.RecipeCategoryViewModel
-import com.astutify.mealplanner.coreui.entity.RecipeIngredientViewModel
-import com.astutify.mealplanner.coreui.entity.RecipeViewModel
-import com.astutify.mealplanner.coreui.presentation.AlertMessageBuilder
-import com.astutify.mealplanner.coreui.presentation.SelectionItemsMapper.Companion.mapRecipeCategory
+import com.astutify.mealplanner.coreui.model.ActivityResult
+import com.astutify.mealplanner.coreui.model.RecipeCategoryViewModel
+import com.astutify.mealplanner.coreui.model.RecipeIngredientViewModel
+import com.astutify.mealplanner.coreui.model.RecipeViewModel
+import com.astutify.mealplanner.coreui.presentation.view.AlertMessageView
+import com.astutify.mealplanner.coreui.presentation.control.ChipCollectionSingleSelection
 import com.astutify.mealplanner.coreui.presentation.control.NumberPicker
-import com.astutify.mealplanner.coreui.presentation.control.SingleSelectionView
 import com.astutify.mealplanner.coreui.presentation.view.LoadingView
 import com.astutify.mealplanner.coreui.presentation.view.MessageView
-import com.astutify.mealplanner.coreui.utils.ImagePickerUtils
+import com.astutify.mealplanner.coreui.presentation.utils.ImagePickerUtils
 import com.astutify.mealplanner.recipe.R
 import com.astutify.mealplanner.recipe.RecipeComponentProvider
 import com.astutify.mealplanner.recipe.RecipeOutNavigatorModule
@@ -53,7 +52,7 @@ class EditRecipeActivity :
     lateinit var imagePickerUtils: ImagePickerUtils
 
     @Inject
-    lateinit var alertMessage: AlertMessageBuilder
+    lateinit var alertMessage: AlertMessageView
 
     private val eventsRelay: Relay<EditRecipeView.Intent> = PublishRelay.create()
 
@@ -64,7 +63,7 @@ class EditRecipeActivity :
     private lateinit var collapsingToolbar: CollapsingToolbarLayout
     private lateinit var recipePicture: ImageView
     private lateinit var servings: NumberPicker
-    private lateinit var categorySelection: SingleSelectionView
+    private lateinit var categorySelection: ChipCollectionSingleSelection
     private lateinit var ingredientsBottomSheet: MaterialCardView
     private lateinit var recipeIngredientsList: RecipeIngredientsListView
     private lateinit var loadingView: LoadingView
@@ -210,16 +209,10 @@ class EditRecipeActivity :
         }
 
         if (viewState.recipeCategories != null && !categorySelection.hasItems()) {
-            categorySelection.render(
-                mapRecipeCategory(
-                    viewState.recipeCategories,
-                    viewState.recipe.recipeCategory?.id
-                )
+            categorySelection.setOptions(
+                viewState.recipeCategories,
+                viewState.recipe.recipeCategory
             )
-        }
-
-        viewState.recipe.recipeCategory?.let {
-            categorySelection.setSelected(it)
         }
 
         servings.setValue(viewState.recipe.servings)

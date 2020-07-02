@@ -9,10 +9,10 @@ import com.astutify.mealplanner.coreui.databinding.ViewNumberPickerBinding
 
 class NumberPicker(context: Context, attrs: AttributeSet?) : ConstraintLayout(context, attrs) {
 
+    private val view = ViewNumberPickerBinding.inflate(LayoutInflater.from(context), this, true)
     private var titleText: String? = null
     private var listener: ((Int) -> Unit)? = null
     private var value = 0
-    private val view = ViewNumberPickerBinding.inflate(LayoutInflater.from(context), this, true)
 
     init {
         if (attrs != null) {

@@ -7,39 +7,39 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.astutify.mealplanner.coreui.databinding.ViewChipSingleSelectionBinding
 import com.astutify.mealplanner.coreui.presentation.control.chip.ChipChoice
 import com.google.android.material.chip.Chip
-import com.google.android.material.chip.ChipGroup
 
-class ChipSingleSelectionView(context: Context, attrs: AttributeSet?) :
+class ChipCollectionSingleSelection(context: Context, attrs: AttributeSet?) :
     ConstraintLayout(context, attrs) {
 
-    private lateinit var listener: ChipSingleSelectionViewListener
     private val view =
         ViewChipSingleSelectionBinding.inflate(LayoutInflater.from(context), this, true)
+    private var items: List<Any> = listOf()
 
-    override fun onFinishInflate() {
-        super.onFinishInflate()
+    fun setListener(listener: (Any?) -> Unit) {
         view.group.setOnCheckedChangeListener { group, checkedId ->
             group.findViewById<Chip>(checkedId)?.let {
-                listener.ChipSelected(it.tag)
+                listener(it.tag)
             }
         }
     }
 
-    fun setListener(listener: ChipSingleSelectionViewListener) {
-        this.listener = listener
-    }
-
-    fun setOptions(options: List<Any>) {
-        options.forEach {
-            val chip = ChipChoice(context)
-            chip.tag = it
-            chip.text = it.toString()
-            view.group.addView(chip)
+    fun setOptions(options: List<Any>, selected: Any? = null) {
+        if (items != options) {
+            items = options
+            view.group.removeAllViews()
+            options.forEach {
+                val chip = ChipChoice(context)
+                chip.tag = it
+                chip.text = it.toString()
+                view.group.addView(chip)
+            }
+            setSelected(selected?.let { it } ?: options.first())
         }
-        setSelected(options.first())
     }
 
-    fun setSelected(item: Any) {
+    fun hasItems() = items.isNotEmpty()
+
+    private fun setSelected(item: Any) {
         view.group.findViewWithTag<Chip>(item)?.let {
             if (view.group.checkedChipId != it.id) {
                 view.group.check(it.id)
@@ -51,11 +51,7 @@ class ChipSingleSelectionView(context: Context, attrs: AttributeSet?) :
         return view.group.findViewById<Chip>(view.group.checkedChipId).tag
     }
 
-    fun setOnCheckedChangeListener(listener: ChipGroup.OnCheckedChangeListener) {
-        view.group.setOnCheckedChangeListener(listener)
-    }
-
     interface ChipSingleSelectionViewListener {
-        fun ChipSelected(item: Any)
+        fun chipSelected(item: Any)
     }
 }

@@ -3,15 +3,13 @@ package com.astutify.mealplanner.ingredient.presentation.editingredient
 import android.os.Bundle
 import android.text.Editable
 import androidx.appcompat.app.AppCompatActivity
-import com.astutify.mealplanner.coreui.entity.IngredientCategoryViewModel
-import com.astutify.mealplanner.coreui.entity.IngredientMeasurementViewModel
-import com.astutify.mealplanner.coreui.entity.IngredientPackageViewModel
-import com.astutify.mealplanner.coreui.entity.IngredientViewModel
-import com.astutify.mealplanner.coreui.entity.MeasurementViewModel
-import com.astutify.mealplanner.coreui.presentation.AfterTextChangeWatcher
-import com.astutify.mealplanner.coreui.presentation.SelectionItemsMapper.Companion.mapIngredientCategory
-import com.astutify.mealplanner.coreui.presentation.SelectionItemsMapper.Companion.mapMeasurement
-import com.astutify.mealplanner.coreui.presentation.control.ChipItemsView
+import com.astutify.mealplanner.coreui.model.IngredientCategoryViewModel
+import com.astutify.mealplanner.coreui.model.IngredientMeasurementViewModel
+import com.astutify.mealplanner.coreui.model.IngredientPackageViewModel
+import com.astutify.mealplanner.coreui.model.IngredientViewModel
+import com.astutify.mealplanner.coreui.model.MeasurementViewModel
+import com.astutify.mealplanner.coreui.presentation.utils.AfterTextChangeWatcher
+import com.astutify.mealplanner.coreui.presentation.control.ChipCollection
 import com.astutify.mealplanner.coreui.presentation.mvi.Feature
 import com.astutify.mealplanner.ingredient.IngredientComponentProvider
 import com.astutify.mealplanner.ingredient.R
@@ -74,8 +72,8 @@ class EditIngredientActivity :
     private fun initView() {
         view.packageSelector.setListener {
             when (it) {
-                ChipItemsView.Event.OnAddClicked -> showAddPackageDialog()
-                is ChipItemsView.Event.OnRemoveClicked -> eventsRelay.accept(
+                ChipCollection.Event.OnAddClicked -> showAddPackageDialog()
+                is ChipCollection.Event.OnRemoveClicked -> eventsRelay.accept(
                     EditIngredientView.Intent.PackageRemoved(
                         (it.item as IngredientPackageViewModel).id
                     )
@@ -85,8 +83,8 @@ class EditIngredientActivity :
 
         view.customMeasurementSelector.setListener {
             when (it) {
-                ChipItemsView.Event.OnAddClicked -> eventsRelay.accept(EditIngredientView.Intent.ClickAddCustomMeasurement)
-                is ChipItemsView.Event.OnRemoveClicked -> eventsRelay.accept(
+                ChipCollection.Event.OnAddClicked -> eventsRelay.accept(EditIngredientView.Intent.ClickAddCustomMeasurement)
+                is ChipCollection.Event.OnRemoveClicked -> eventsRelay.accept(
                     EditIngredientView.Intent.CustomMeasurementRemoved(
                         (it.item as IngredientMeasurementViewModel).measurement
                     )
@@ -200,15 +198,10 @@ class EditIngredientActivity :
 
     private fun renderCategorySelector(viewState: EditIngredientViewState) {
         if (viewState.categories.isNotEmpty() && !view.categorySelector.hasItems()) {
-            view.categorySelector.render(
-                mapIngredientCategory(
-                    viewState.categories,
-                    viewState.ingredient.category.id
-                )
+            view.categorySelector.setOptions(
+                viewState.categories,
+                viewState.ingredient.category
             )
-        }
-        viewState.ingredient.category.let { category ->
-            view.categorySelector.setSelected(category.id)
         }
     }
 
@@ -220,15 +213,10 @@ class EditIngredientActivity :
 
     private fun renderMeasurementSelector(viewState: EditIngredientViewState) {
         if (viewState.measurements.isNotEmpty() && !view.measurementSelector.hasItems()) {
-            view.measurementSelector.render(
-                mapMeasurement(
-                    viewState.measurements,
-                    viewState.ingredient.getPrimaryMeasurement()?.id
-                )
+            view.measurementSelector.setOptions(
+                viewState.measurements,
+                viewState.ingredient.getPrimaryMeasurement()
             )
-        }
-        viewState.ingredient.getPrimaryMeasurement()?.let {
-            view.measurementSelector.setSelected(it)
         }
     }
 

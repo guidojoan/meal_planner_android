@@ -20,8 +20,8 @@ import androidx.test.espresso.matcher.ViewMatchers.withParent
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.rule.ActivityTestRule
 import com.astutify.mealplanner.MockApp
-import com.astutify.mealplanner.coreui.entity.IngredientViewModel
-import com.astutify.mealplanner.coreui.presentation.TestHelper
+import com.astutify.mealplanner.coreui.model.IngredientViewModel
+import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
 import com.astutify.mealplanner.ingredient.R
 import com.astutify.mealplanner.utils.RecyclerViewItemCountAssertion.Companion.withItemCount
 import com.nhaarman.mockitokotlin2.mock
