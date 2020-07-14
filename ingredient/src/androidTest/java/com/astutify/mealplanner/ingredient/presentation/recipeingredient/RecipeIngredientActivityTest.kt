@@ -23,6 +23,7 @@ import com.astutify.mealplanner.MockApp
 import com.astutify.mealplanner.coreui.model.IngredientViewModel
 import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
 import com.astutify.mealplanner.ingredient.R
+import com.astutify.mealplanner.ingredient.presentation.recipeingredient.mvi.RecipeIngredientsViewState
 import com.astutify.mealplanner.utils.RecyclerViewItemCountAssertion.Companion.withItemCount
 import com.nhaarman.mockitokotlin2.mock
 import io.reactivex.observers.TestObserver
@@ -71,7 +72,10 @@ class RecipeIngredientActivityTest {
         for (i in 1..5) {
             ingredients.add(TestHelper.getIngredientVM())
         }
-        val state = RecipeIngredientsViewState(ingredients = ingredients)
+        val state =
+            RecipeIngredientsViewState(
+                ingredients = ingredients
+            )
 
         runOnUiThread {
             view.render(state)
@@ -85,7 +89,10 @@ class RecipeIngredientActivityTest {
     fun clickAddIngredient() {
         val ingredients = listOf(TestHelper.getIngredientVM())
         val testObserver = TestObserver<RecipeIngredientsView1.Intent>()
-        val state = RecipeIngredientsViewState(ingredients = ingredients)
+        val state =
+            RecipeIngredientsViewState(
+                ingredients = ingredients
+            )
 
         runOnUiThread {
             view.render(state)
@@ -100,7 +107,10 @@ class RecipeIngredientActivityTest {
     fun endOfListReached() {
         val ingredients = listOf(TestHelper.getIngredientVM())
         val testObserver = TestObserver<RecipeIngredientsView1.Intent>()
-        val state = RecipeIngredientsViewState(ingredients = ingredients)
+        val state =
+            RecipeIngredientsViewState(
+                ingredients = ingredients
+            )
 
         runOnUiThread {
             view.render(state)
@@ -112,7 +122,8 @@ class RecipeIngredientActivityTest {
 
     @Test
     fun sendEventWhenWritesOnSearchBox() {
-        val state = RecipeIngredientsViewState()
+        val state =
+            RecipeIngredientsViewState()
         val searchText = "searchText"
         val testObserver = TestObserver<RecipeIngredientsView1.Intent>()
 
@@ -140,7 +151,10 @@ class RecipeIngredientActivityTest {
     @Test
     fun ingredientQuantitySet() {
         val ingredient = TestHelper.getIngredientVM()
-        val state = RecipeIngredientsViewState(selectedIngredient = ingredient)
+        val state =
+            RecipeIngredientsViewState(
+                selectedIngredient = ingredient
+            )
         val testObserver = TestObserver<RecipeIngredientsView1.Intent>()
 
         runOnUiThread {
@@ -180,7 +194,10 @@ class RecipeIngredientActivityTest {
         for (i in 1..2) {
             ingredients.add(TestHelper.getIngredientVM())
         }
-        val state = RecipeIngredientsViewState(ingredients = ingredients)
+        val state =
+            RecipeIngredientsViewState(
+                ingredients = ingredients
+            )
         val testObserver = TestObserver<RecipeIngredientsView1.Intent>()
 
         runOnUiThread {

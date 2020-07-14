@@ -2,14 +2,20 @@ package com.astutify.mealplanner.ingredient.presentation.recipeingredient
 
 import com.astutify.mealplanner.coreui.model.IngredientViewModel
 import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
-import com.astutify.mealplanner.coreui.presentation.mvi.Next
-import com.astutify.mealplanner.coreui.presentation.mvi.State
+import com.astutify.mvi.Next
+import com.astutify.mvi.State
+import com.astutify.mealplanner.ingredient.presentation.recipeingredient.mvi.RecipeIngredientsViewEffect
+import com.astutify.mealplanner.ingredient.presentation.recipeingredient.mvi.RecipeIngredientsViewEvent
+import com.astutify.mealplanner.ingredient.presentation.recipeingredient.mvi.RecipeIngredientsViewReducer
+import com.astutify.mealplanner.ingredient.presentation.recipeingredient.mvi.RecipeIngredientsViewState
 import org.junit.Test
 
 class RecipeIngredientsViewReducerTest {
 
-    private val reducer = RecipeIngredientsViewReducer()
-    private val initialState = RecipeIngredientsViewState()
+    private val reducer =
+        RecipeIngredientsViewReducer()
+    private val initialState =
+        RecipeIngredientsViewState()
 
     @Test
     fun `should return a list of ingredients when is invoked with DataLoaded event`() {

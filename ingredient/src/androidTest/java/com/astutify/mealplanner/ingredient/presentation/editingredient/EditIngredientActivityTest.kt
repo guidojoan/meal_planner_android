@@ -7,6 +7,7 @@ import androidx.test.rule.ActivityTestRule
 import com.astutify.mealplanner.MockApp
 import com.astutify.mealplanner.coreui.model.IngredientViewModel
 import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
+import com.astutify.mealplanner.ingredient.presentation.editingredient.mvi.EditIngredientViewState
 import com.nhaarman.mockitokotlin2.mock
 import org.junit.Rule
 

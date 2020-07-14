@@ -84,7 +84,6 @@ class AddRecipeIngredientDialog :
     }
 
     companion object {
-
         private const val INGREDIENT_EXTRA = "ingredientExtra"
 
         fun newInstance(ingredient: IngredientViewModel): AddRecipeIngredientDialog {

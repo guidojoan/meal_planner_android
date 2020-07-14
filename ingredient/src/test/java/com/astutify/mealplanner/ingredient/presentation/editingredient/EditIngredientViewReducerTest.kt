@@ -1,12 +1,18 @@
 package com.astutify.mealplanner.ingredient.presentation.editingredient
 
 import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
+import com.astutify.mealplanner.ingredient.presentation.editingredient.mvi.EditIngredientViewEffect
+import com.astutify.mealplanner.ingredient.presentation.editingredient.mvi.EditIngredientViewEvent
+import com.astutify.mealplanner.ingredient.presentation.editingredient.mvi.EditIngredientViewReducer
+import com.astutify.mealplanner.ingredient.presentation.editingredient.mvi.EditIngredientViewState
 import org.junit.Test
 
 class EditIngredientViewReducerTest {
 
-    private val reducer = EditIngredientViewReducer()
-    private val initialState = EditIngredientViewState()
+    private val reducer =
+        EditIngredientViewReducer()
+    private val initialState =
+        EditIngredientViewState()
 
     @Test
     fun `should return LoadData Effect when is invoked with LoadData Event`() {

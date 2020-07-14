@@ -5,11 +5,15 @@ import com.astutify.mealplanner.coreui.model.ActivityResult
 import com.astutify.mealplanner.coreui.model.RecipeViewModel
 import com.astutify.mealplanner.coreui.model.mapper.toPresentation
 import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
-import com.astutify.mealplanner.recipe.Navigator
+import com.astutify.mealplanner.recipe.presentation.Navigator
 import com.astutify.mealplanner.recipe.RecipeOutNavigator
 import com.astutify.mealplanner.recipe.domain.DeleteRecipesUseCase
 import com.astutify.mealplanner.recipe.domain.SaveRecipeUseCase
 import com.astutify.mealplanner.recipe.domain.UpdateRecipeUseCase
+import com.astutify.mealplanner.recipe.presentation.edit.mvi.EditRecipeViewEffect
+import com.astutify.mealplanner.recipe.presentation.edit.mvi.EditRecipeViewEffectHandler
+import com.astutify.mealplanner.recipe.presentation.edit.mvi.EditRecipeViewEvent
+import com.astutify.mealplanner.recipe.presentation.edit.mvi.EditRecipeViewState
 import com.nhaarman.mockitokotlin2.argumentCaptor
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
@@ -29,16 +33,18 @@ class EditRecipeViewEffectHandlerTest {
     private val updateRecipeUseCase: UpdateRecipeUseCase = mock()
     private val deleteRecipesUseCase: DeleteRecipesUseCase = mock()
 
-    private val effectHandler = EditRecipeViewEffectHandler(
-        Schedulers.trampoline(),
-        navigator,
-        outNavigator,
-        saveRecipeUseCase,
-        getRecipeCategoriesUseCase,
-        updateRecipeUseCase,
-        deleteRecipesUseCase
-    )
-    private val initialState = EditRecipeViewState()
+    private val effectHandler =
+        EditRecipeViewEffectHandler(
+            Schedulers.trampoline(),
+            navigator,
+            outNavigator,
+            saveRecipeUseCase,
+            getRecipeCategoriesUseCase,
+            updateRecipeUseCase,
+            deleteRecipesUseCase
+        )
+    private val initialState =
+        EditRecipeViewState()
 
     @After
     fun tearDown() {

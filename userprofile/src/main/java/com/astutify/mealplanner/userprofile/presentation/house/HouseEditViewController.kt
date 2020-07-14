@@ -2,6 +2,8 @@ package com.astutify.mealplanner.userprofile.presentation.house
 
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
+import com.astutify.mealplanner.userprofile.presentation.house.mvi.HouseEditViewEvent
+import com.astutify.mealplanner.userprofile.presentation.house.mvi.HouseEditViewFeature
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject

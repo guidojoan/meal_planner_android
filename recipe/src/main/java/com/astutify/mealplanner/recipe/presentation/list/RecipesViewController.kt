@@ -2,6 +2,8 @@ package com.astutify.mealplanner.recipe.presentation.list
 
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
+import com.astutify.mealplanner.recipe.presentation.list.mvi.RecipesViewEvent
+import com.astutify.mealplanner.recipe.presentation.list.mvi.RecipesViewFeature
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject

@@ -1,12 +1,18 @@
 package com.astutify.mealplanner.recipe.presentation.list
 
 import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
+import com.astutify.mealplanner.recipe.presentation.list.mvi.RecipesViewEffect
+import com.astutify.mealplanner.recipe.presentation.list.mvi.RecipesViewEvent
+import com.astutify.mealplanner.recipe.presentation.list.mvi.RecipesViewReducer
+import com.astutify.mealplanner.recipe.presentation.list.mvi.RecipesViewState
 import org.junit.Test
 
 class RecipesViewReducerTest {
 
-    private val reducer = RecipesViewReducer()
-    private val initialState = RecipesViewState()
+    private val reducer =
+        RecipesViewReducer()
+    private val initialState =
+        RecipesViewState()
 
     @Test
     fun `should return CheckLoginStatus Effect when is invoked with CheckLoginStatus Event`() {

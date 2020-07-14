@@ -1,6 +1,7 @@
 package com.astutify.mealplanner.ingredient.presentation.list
 
 import com.astutify.mealplanner.coreui.model.IngredientViewModel
+import com.astutify.mealplanner.ingredient.presentation.list.mvi.IngredientsViewState
 import io.reactivex.Observable
 
 interface IngredientsView {

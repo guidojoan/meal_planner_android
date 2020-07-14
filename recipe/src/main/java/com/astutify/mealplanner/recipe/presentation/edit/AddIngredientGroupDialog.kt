@@ -48,10 +48,6 @@ class AddIngredientGroupDialog : DialogFragment() {
         }
     }
 
-    interface AddIngredientGroupDialogListener {
-        fun onAddIngredientGroup(ingredientGroupName: String)
-    }
-
     override fun onAttach(context: Context) {
         super.onAttach(context)
         try {
@@ -59,6 +55,10 @@ class AddIngredientGroupDialog : DialogFragment() {
         } catch (e: ClassCastException) {
             throw ClassCastException(("$context must implement AddIngredientGroupDialogListener"))
         }
+    }
+
+    interface AddIngredientGroupDialogListener {
+        fun onAddIngredientGroup(ingredientGroupName: String)
     }
 
     companion object {

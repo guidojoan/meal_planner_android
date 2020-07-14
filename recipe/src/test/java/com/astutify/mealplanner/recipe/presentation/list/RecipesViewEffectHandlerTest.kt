@@ -2,10 +2,14 @@ package com.astutify.mealplanner.recipe.presentation.list
 
 import com.astutify.mealplanner.core.authentication.SessionManager
 import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
-import com.astutify.mealplanner.recipe.Navigator
+import com.astutify.mealplanner.recipe.presentation.Navigator
 import com.astutify.mealplanner.recipe.RecipeOutNavigator
 import com.astutify.mealplanner.recipe.domain.GetRecipesNextPageUseCase
 import com.astutify.mealplanner.recipe.domain.GetRecipesUseCase
+import com.astutify.mealplanner.recipe.presentation.list.mvi.RecipesViewEffect
+import com.astutify.mealplanner.recipe.presentation.list.mvi.RecipesViewEffectHandler
+import com.astutify.mealplanner.recipe.presentation.list.mvi.RecipesViewEvent
+import com.astutify.mealplanner.recipe.presentation.list.mvi.RecipesViewState
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
@@ -22,15 +26,17 @@ class RecipesViewEffectHandlerTest {
     private val getRecipesUseCase: GetRecipesUseCase = mock()
     private val getRecipesNextPageUseCase: GetRecipesNextPageUseCase = mock()
     private val sessionManager: SessionManager = mock()
-    private val effectHandler = RecipesViewEffectHandler(
-        Schedulers.trampoline(),
-        navigator,
-        outNavigator,
-        getRecipesUseCase,
-        getRecipesNextPageUseCase,
-        sessionManager
-    )
-    private val initialState = RecipesViewState()
+    private val effectHandler =
+        RecipesViewEffectHandler(
+            Schedulers.trampoline(),
+            navigator,
+            outNavigator,
+            getRecipesUseCase,
+            getRecipesNextPageUseCase,
+            sessionManager
+        )
+    private val initialState =
+        RecipesViewState()
 
     @After
     fun tearDown() {

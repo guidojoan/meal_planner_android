@@ -9,6 +9,7 @@ import com.astutify.mealplanner.recipe.R
 import com.astutify.mealplanner.recipe.RecipeComponentProvider
 import com.astutify.mealplanner.recipe.RecipeOutNavigatorModule
 import com.astutify.mealplanner.recipe.databinding.ViewDetailRecipeBinding
+import com.astutify.mealplanner.recipe.presentation.detail.mvi.RecipeDetailViewState
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.jakewharton.rxrelay2.PublishRelay

@@ -2,6 +2,7 @@ package com.astutify.mealplanner.recipe.presentation.edit
 
 import com.astutify.mealplanner.coreui.model.RecipeCategoryViewModel
 import com.astutify.mealplanner.coreui.model.RecipeIngredientViewModel
+import com.astutify.mealplanner.recipe.presentation.edit.mvi.EditRecipeViewState
 import io.reactivex.Observable
 
 interface EditRecipeView {

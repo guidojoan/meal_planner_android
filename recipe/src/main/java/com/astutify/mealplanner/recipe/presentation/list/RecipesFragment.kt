@@ -19,6 +19,7 @@ import com.astutify.mealplanner.recipe.RecipeComponentProvider
 import com.astutify.mealplanner.recipe.RecipeOutNavigatorModule
 import com.astutify.mealplanner.recipe.databinding.ViewListRecipesBinding
 import com.astutify.mealplanner.recipe.presentation.list.adapter.RecipesGridView
+import com.astutify.mealplanner.recipe.presentation.list.mvi.RecipesViewState
 import com.jakewharton.rxrelay2.PublishRelay
 import com.jakewharton.rxrelay2.Relay
 import dagger.BindsInstance

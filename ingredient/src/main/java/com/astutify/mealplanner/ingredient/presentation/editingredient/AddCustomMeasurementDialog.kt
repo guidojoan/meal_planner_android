@@ -78,10 +78,6 @@ class AddCustomMeasurementDialog : DialogFragment() {
         }
     }
 
-    interface AddCustomMeasurementDialogListener {
-        fun addCustomMeasurement(measurement: MeasurementViewModel, quantity: Float)
-    }
-
     override fun onAttach(context: Context) {
         super.onAttach(context)
         try {
@@ -91,8 +87,11 @@ class AddCustomMeasurementDialog : DialogFragment() {
         }
     }
 
-    companion object {
+    interface AddCustomMeasurementDialogListener {
+        fun addCustomMeasurement(measurement: MeasurementViewModel, quantity: Float)
+    }
 
+    companion object {
         private const val MEASUREMENTS_EXTRA = "measurementsExtra"
         private const val PRIMARY_MEASUREMENT = "primaryMeasurement"
 

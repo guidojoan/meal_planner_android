@@ -7,6 +7,10 @@ import com.astutify.mealplanner.userprofile.domain.GetHouseUseCase
 import com.astutify.mealplanner.userprofile.domain.GetUserProfileUseCase
 import com.astutify.mealplanner.userprofile.domain.LeaveHouseUseCase
 import com.astutify.mealplanner.userprofile.domain.LogoutUseCase
+import com.astutify.mealplanner.userprofile.presentation.profile.mvi.UserProfileViewEffect
+import com.astutify.mealplanner.userprofile.presentation.profile.mvi.UserProfileViewEffectHandler
+import com.astutify.mealplanner.userprofile.presentation.profile.mvi.UserProfileViewEvent
+import com.astutify.mealplanner.userprofile.presentation.profile.mvi.UserProfileViewState
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
@@ -24,16 +28,18 @@ class UserProfileViewEffectHandlerTest {
     private val logoutUseCase: LogoutUseCase = mock()
     private val leaveHouseUseCase: LeaveHouseUseCase = mock()
     private val getAboutUseCase: GetAboutUseCase = mock()
-    private val effectHandler = UserProfileViewEffectHandler(
-        Schedulers.trampoline(),
-        userProfileOutNavigator,
-        getUserProfileUseCase,
-        getHouseUseCase,
-        logoutUseCase,
-        leaveHouseUseCase,
-        getAboutUseCase
-    )
-    private val initialState = UserProfileViewState()
+    private val effectHandler =
+        UserProfileViewEffectHandler(
+            Schedulers.trampoline(),
+            userProfileOutNavigator,
+            getUserProfileUseCase,
+            getHouseUseCase,
+            logoutUseCase,
+            leaveHouseUseCase,
+            getAboutUseCase
+        )
+    private val initialState =
+        UserProfileViewState()
 
     @After
     fun tearDown() {

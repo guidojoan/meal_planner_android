@@ -1,12 +1,18 @@
 package com.astutify.mealplanner.userprofile.presentation.house
 
 import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
+import com.astutify.mealplanner.userprofile.presentation.house.mvi.HouseEditViewEffect
+import com.astutify.mealplanner.userprofile.presentation.house.mvi.HouseEditViewEvent
+import com.astutify.mealplanner.userprofile.presentation.house.mvi.HouseEditViewReducer
+import com.astutify.mealplanner.userprofile.presentation.house.mvi.HouseEditViewState
 import org.junit.Test
 
 class HouseEditViewReducerTest {
 
-    private val reducer = HouseEditViewReducer()
-    private val initialState = HouseEditViewState()
+    private val reducer =
+        HouseEditViewReducer()
+    private val initialState =
+        HouseEditViewState()
 
     @Test
     fun `should return State with house name and SearchHouse Effect when invoked with OnNameChanged Event`() {

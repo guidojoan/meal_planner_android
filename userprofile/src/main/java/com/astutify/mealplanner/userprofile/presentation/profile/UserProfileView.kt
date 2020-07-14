@@ -1,5 +1,6 @@
 package com.astutify.mealplanner.userprofile.presentation.profile
 
+import com.astutify.mealplanner.userprofile.presentation.profile.mvi.UserProfileViewState
 import io.reactivex.Observable
 
 interface UserProfileView {

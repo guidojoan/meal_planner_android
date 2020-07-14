@@ -14,8 +14,8 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class AddPackageDialog : DialogFragment() {
 
-    private lateinit var listener: AddPackageDialogListener
     private lateinit var view: DialogAddPackageBinding
+    private lateinit var listener: AddPackageDialogListener
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return MaterialAlertDialogBuilder(context!!)
@@ -69,10 +69,6 @@ class AddPackageDialog : DialogFragment() {
         }
     }
 
-    interface AddPackageDialogListener {
-        fun onAddPackage(name: String, quantity: Float)
-    }
-
     override fun onAttach(context: Context) {
         super.onAttach(context)
         try {
@@ -80,6 +76,10 @@ class AddPackageDialog : DialogFragment() {
         } catch (e: ClassCastException) {
             throw ClassCastException(("$context must implement AddPackageDialogListener"))
         }
+    }
+
+    interface AddPackageDialogListener {
+        fun onAddPackage(name: String, quantity: Float)
     }
 
     companion object {

@@ -91,4 +91,5 @@ dependencies {
     implementation deps.glide.core
     kapt deps.glide.annotatorProcessor
 
+    implementation 'com.astutify.mvi:mvi:0.2.0'
 }

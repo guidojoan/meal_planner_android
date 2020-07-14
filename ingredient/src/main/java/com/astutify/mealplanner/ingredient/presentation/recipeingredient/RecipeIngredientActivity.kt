@@ -12,6 +12,7 @@ import com.astutify.mealplanner.coreui.model.MeasurementViewModel
 import com.astutify.mealplanner.ingredient.IngredientComponentProvider
 import com.astutify.mealplanner.ingredient.databinding.ViewRecipeIngredientBinding
 import com.astutify.mealplanner.ingredient.presentation.list.adapter.IngredientsListView
+import com.astutify.mealplanner.ingredient.presentation.recipeingredient.mvi.RecipeIngredientsViewState
 import com.jakewharton.rxrelay2.PublishRelay
 import com.jakewharton.rxrelay2.Relay
 import dagger.BindsInstance

@@ -27,6 +27,7 @@ import com.astutify.mealplanner.recipe.R
 import com.astutify.mealplanner.recipe.RecipeComponentProvider
 import com.astutify.mealplanner.recipe.RecipeOutNavigatorModule
 import com.astutify.mealplanner.recipe.presentation.edit.adapter.RecipeIngredientsListView
+import com.astutify.mealplanner.recipe.presentation.edit.mvi.EditRecipeViewState
 import com.bumptech.glide.Glide
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.appbar.MaterialToolbar

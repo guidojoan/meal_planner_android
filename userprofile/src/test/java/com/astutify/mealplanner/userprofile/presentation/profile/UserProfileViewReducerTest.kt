@@ -1,12 +1,18 @@
 package com.astutify.mealplanner.userprofile.presentation.profile
 
 import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
+import com.astutify.mealplanner.userprofile.presentation.profile.mvi.UserProfileViewEffect
+import com.astutify.mealplanner.userprofile.presentation.profile.mvi.UserProfileViewEvent
+import com.astutify.mealplanner.userprofile.presentation.profile.mvi.UserProfileViewReducer
+import com.astutify.mealplanner.userprofile.presentation.profile.mvi.UserProfileViewState
 import org.junit.Test
 
 class UserProfileViewReducerTest {
 
-    private val reducer = UserProfileViewReducer()
-    private val initialState = UserProfileViewState()
+    private val reducer =
+        UserProfileViewReducer()
+    private val initialState =
+        UserProfileViewState()
 
     @Test
     fun `should get Logout Effect when invoked with LogOut Event`() {

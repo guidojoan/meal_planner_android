@@ -1,9 +1,13 @@
 package com.astutify.mealplanner.ingredient.presentation.list
 
 import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
-import com.astutify.mealplanner.ingredient.Navigator
+import com.astutify.mealplanner.ingredient.presentation.Navigator
 import com.astutify.mealplanner.ingredient.domain.GetIngredientsNexPageUseCase
 import com.astutify.mealplanner.ingredient.domain.GetIngredientsUseCase
+import com.astutify.mealplanner.ingredient.presentation.list.mvi.IngredientsViewEffect
+import com.astutify.mealplanner.ingredient.presentation.list.mvi.IngredientsViewEffectHandler
+import com.astutify.mealplanner.ingredient.presentation.list.mvi.IngredientsViewEvent
+import com.astutify.mealplanner.ingredient.presentation.list.mvi.IngredientsViewState
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
@@ -18,13 +22,15 @@ class IngredientsViewEffectHandlerTest {
     private val navigator: Navigator = mock()
     private val getIngredientsUseCase: GetIngredientsUseCase = mock()
     private val getIngredientsNexPageUseCase: GetIngredientsNexPageUseCase = mock()
-    private val effectHandler = IngredientsViewEffectHandler(
-        Schedulers.trampoline(),
-        navigator,
-        getIngredientsUseCase,
-        getIngredientsNexPageUseCase
-    )
-    private val initialState = IngredientsViewState()
+    private val effectHandler =
+        IngredientsViewEffectHandler(
+            Schedulers.trampoline(),
+            navigator,
+            getIngredientsUseCase,
+            getIngredientsNexPageUseCase
+        )
+    private val initialState =
+        IngredientsViewState()
 
     @After
     fun tearDown() {

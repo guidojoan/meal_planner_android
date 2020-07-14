@@ -12,6 +12,7 @@ import com.astutify.mealplanner.userprofile.R
 import com.astutify.mealplanner.userprofile.UserProfileComponentProvider
 import com.astutify.mealplanner.userprofile.UserProfileOutNavigatorModule
 import com.astutify.mealplanner.userprofile.databinding.ViewHouseEditBinding
+import com.astutify.mealplanner.userprofile.presentation.house.mvi.HouseEditViewState
 import com.google.android.material.snackbar.Snackbar
 import com.jakewharton.rxbinding3.view.clicks
 import com.jakewharton.rxbinding3.widget.afterTextChangeEvents

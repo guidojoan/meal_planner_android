@@ -2,7 +2,10 @@ package com.astutify.mealplanner.auth.presentation.login
 
 import com.astutify.mealplanner.auth.AuthOutNavigator
 import com.astutify.mealplanner.auth.domain.LoginUseCase
-import com.astutify.mealplanner.coreui.presentation.mvi.EffectHandler
+import com.astutify.mealplanner.auth.presentation.login.mvi.LoginViewEffect
+import com.astutify.mealplanner.auth.presentation.login.mvi.LoginViewEvent
+import com.astutify.mealplanner.auth.presentation.login.mvi.LoginViewState
+import com.astutify.mvi.EffectHandler
 import io.reactivex.Flowable
 import io.reactivex.Flowable.never
 import io.reactivex.Scheduler

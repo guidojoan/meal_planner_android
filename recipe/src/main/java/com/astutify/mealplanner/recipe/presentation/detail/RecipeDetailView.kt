@@ -1,5 +1,6 @@
 package com.astutify.mealplanner.recipe.presentation.detail
 
+import com.astutify.mealplanner.recipe.presentation.detail.mvi.RecipeDetailViewState
 import io.reactivex.Observable
 
 interface RecipeDetailView {

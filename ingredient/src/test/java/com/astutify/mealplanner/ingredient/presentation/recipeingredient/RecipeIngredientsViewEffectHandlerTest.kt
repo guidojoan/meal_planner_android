@@ -3,9 +3,13 @@ package com.astutify.mealplanner.ingredient.presentation.recipeingredient
 import com.astutify.mealplanner.coreui.model.ActivityResult
 import com.astutify.mealplanner.coreui.model.RecipeIngredientViewModel
 import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
-import com.astutify.mealplanner.ingredient.Navigator
+import com.astutify.mealplanner.ingredient.presentation.Navigator
 import com.astutify.mealplanner.ingredient.domain.GetIngredientsNexPageUseCase
 import com.astutify.mealplanner.ingredient.domain.GetIngredientsUseCase
+import com.astutify.mealplanner.ingredient.presentation.recipeingredient.mvi.RecipeIngredientsViewEffect
+import com.astutify.mealplanner.ingredient.presentation.recipeingredient.mvi.RecipeIngredientsViewEffectHandler
+import com.astutify.mealplanner.ingredient.presentation.recipeingredient.mvi.RecipeIngredientsViewEvent
+import com.astutify.mealplanner.ingredient.presentation.recipeingredient.mvi.RecipeIngredientsViewState
 import com.nhaarman.mockitokotlin2.argumentCaptor
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
@@ -21,14 +25,16 @@ class RecipeIngredientsViewEffectHandlerTest {
     private val navigator: Navigator = mock()
     private val getIngredientsUseCase: GetIngredientsUseCase = mock()
     private val getIngredientsNexPageUseCase: GetIngredientsNexPageUseCase = mock()
-    private val effectHandler = RecipeIngredientsViewEffectHandler(
-        Schedulers.trampoline(),
-        navigator,
-        getIngredientsUseCase,
-        getIngredientsNexPageUseCase,
-        INGREDIENT_GROUP_ID
-    )
-    private val initialState = RecipeIngredientsViewState()
+    private val effectHandler =
+        RecipeIngredientsViewEffectHandler(
+            Schedulers.trampoline(),
+            navigator,
+            getIngredientsUseCase,
+            getIngredientsNexPageUseCase,
+            INGREDIENT_GROUP_ID
+        )
+    private val initialState =
+        RecipeIngredientsViewState()
 
     @Test
     fun `should go back if effect is ClickBack`() {

@@ -2,6 +2,8 @@ package com.astutify.mealplanner.userprofile.presentation.profile
 
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
+import com.astutify.mealplanner.userprofile.presentation.profile.mvi.UserProfileViewEvent
+import com.astutify.mealplanner.userprofile.presentation.profile.mvi.UserProfileViewFeature
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject

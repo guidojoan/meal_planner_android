@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import com.astutify.mealplanner.core.Mockable
+import com.astutify.mealplanner.ingredient.presentation.editingredient.mvi.EditIngredientViewEvent
+import com.astutify.mealplanner.ingredient.presentation.editingredient.mvi.EditIngredientViewFeature
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject

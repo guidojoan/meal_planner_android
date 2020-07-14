@@ -1,7 +1,10 @@
 package com.astutify.mealplanner.recipe.presentation.detail
 
 import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
-import com.astutify.mealplanner.recipe.Navigator
+import com.astutify.mealplanner.recipe.presentation.Navigator
+import com.astutify.mealplanner.recipe.presentation.detail.mvi.RecipeDetailViewEffect
+import com.astutify.mealplanner.recipe.presentation.detail.mvi.RecipeDetailViewEffectHandler
+import com.astutify.mealplanner.recipe.presentation.detail.mvi.RecipeDetailViewState
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import org.junit.Test
@@ -9,8 +12,12 @@ import org.junit.Test
 class RecipeDetailViewEffectHandlerTest {
 
     private val navigator: Navigator = mock()
-    private val effectHandler = RecipeDetailViewEffectHandler(navigator)
-    private val initialState = RecipeDetailViewState(TestHelper.getRecipeVM())
+    private val effectHandler =
+        RecipeDetailViewEffectHandler(
+            navigator
+        )
+    private val initialState =
+        RecipeDetailViewState(TestHelper.getRecipeVM())
 
     @Test
     fun `should navigate back when is invoked with GoBack Effect`() {

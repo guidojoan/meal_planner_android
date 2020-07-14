@@ -1,5 +1,6 @@
 package com.astutify.mealplanner.userprofile.presentation.house
 
+import com.astutify.mealplanner.userprofile.presentation.house.mvi.HouseEditViewState
 import io.reactivex.Observable
 
 interface HouseEditView {

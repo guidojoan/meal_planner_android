@@ -1,13 +1,21 @@
 package com.astutify.mealplanner.recipe.presentation.detail
 
 import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
+import com.astutify.mealplanner.recipe.presentation.detail.mvi.RecipeDetailViewEffect
+import com.astutify.mealplanner.recipe.presentation.detail.mvi.RecipeDetailViewEvent
+import com.astutify.mealplanner.recipe.presentation.detail.mvi.RecipeDetailViewReducer
+import com.astutify.mealplanner.recipe.presentation.detail.mvi.RecipeDetailViewState
 import org.junit.Test
 
 class RecipeDetailViewReducerTest {
 
     private val recipe = TestHelper.getRecipeVM()
-    private val reducer = RecipeDetailViewReducer(recipe)
-    private val initialState = RecipeDetailViewState(recipe)
+    private val reducer =
+        RecipeDetailViewReducer(
+            recipe
+        )
+    private val initialState =
+        RecipeDetailViewState(recipe)
 
     @Test
     fun `should return GoBack Effect when is invoked with ClickBack Event`() {

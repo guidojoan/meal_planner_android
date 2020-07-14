@@ -6,6 +6,10 @@ import com.astutify.mealplanner.userprofile.UserProfileOutNavigator
 import com.astutify.mealplanner.userprofile.domain.CreateHouseUseCase
 import com.astutify.mealplanner.userprofile.domain.LinkHouseUseCase
 import com.astutify.mealplanner.userprofile.domain.SearchHouseUseCase
+import com.astutify.mealplanner.userprofile.presentation.house.mvi.HouseEditEffectHandler
+import com.astutify.mealplanner.userprofile.presentation.house.mvi.HouseEditViewEffect
+import com.astutify.mealplanner.userprofile.presentation.house.mvi.HouseEditViewEvent
+import com.astutify.mealplanner.userprofile.presentation.house.mvi.HouseEditViewState
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
@@ -21,14 +25,16 @@ class HouseEditEffectHandlerTest {
     private val searchHouseUseCase: SearchHouseUseCase = mock()
     private val linkHouseUseCase: LinkHouseUseCase = mock()
     private val createHouseUseCase: CreateHouseUseCase = mock()
-    private val effectHandler = HouseEditEffectHandler(
-        Schedulers.trampoline(),
-        outNavigatorComponent,
-        searchHouseUseCase,
-        linkHouseUseCase,
-        createHouseUseCase
-    )
-    private val initialState = HouseEditViewState()
+    private val effectHandler =
+        HouseEditEffectHandler(
+            Schedulers.trampoline(),
+            outNavigatorComponent,
+            searchHouseUseCase,
+            linkHouseUseCase,
+            createHouseUseCase
+        )
+    private val initialState =
+        HouseEditViewState()
 
     @After
     fun tearDown() {

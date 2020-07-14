@@ -9,6 +9,8 @@ import com.astutify.mealplanner.auth.AuthOutNavigatorModule
 import com.astutify.mealplanner.auth.BuildConfig
 import com.astutify.mealplanner.auth.R
 import com.astutify.mealplanner.auth.databinding.ViewLoginBinding
+import com.astutify.mealplanner.auth.presentation.login.mvi.LoginViewController
+import com.astutify.mealplanner.auth.presentation.login.mvi.LoginViewState
 import com.astutify.mealplanner.core.model.data.GoogleUser
 import com.astutify.mealplanner.coreui.presentation.view.AlertMessageView
 import com.google.android.gms.auth.api.signin.GoogleSignIn

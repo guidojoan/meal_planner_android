@@ -1,12 +1,18 @@
 package com.astutify.mealplanner.ingredient.presentation.list
 
 import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
+import com.astutify.mealplanner.ingredient.presentation.list.mvi.IngredientsVewReducer
+import com.astutify.mealplanner.ingredient.presentation.list.mvi.IngredientsViewEffect
+import com.astutify.mealplanner.ingredient.presentation.list.mvi.IngredientsViewEvent
+import com.astutify.mealplanner.ingredient.presentation.list.mvi.IngredientsViewState
 import org.junit.Test
 
 class IngredientsVewReducerTest {
 
-    private val reducer = IngredientsVewReducer()
-    private val initialState = IngredientsViewState()
+    private val reducer =
+        IngredientsVewReducer()
+    private val initialState =
+        IngredientsViewState()
 
     @Test
     fun `should return LoadData Effect when is invoked with LoadData Event`() {

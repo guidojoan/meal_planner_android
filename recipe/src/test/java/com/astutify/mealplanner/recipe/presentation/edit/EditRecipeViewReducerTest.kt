@@ -1,12 +1,18 @@
 package com.astutify.mealplanner.recipe.presentation.edit
 
 import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
+import com.astutify.mealplanner.recipe.presentation.edit.mvi.EditRecipeViewEffect
+import com.astutify.mealplanner.recipe.presentation.edit.mvi.EditRecipeViewEvent
+import com.astutify.mealplanner.recipe.presentation.edit.mvi.EditRecipeViewReducer
+import com.astutify.mealplanner.recipe.presentation.edit.mvi.EditRecipeViewState
 import org.junit.Test
 
 class EditRecipeViewReducerTest {
 
-    private val reducer = EditRecipeViewReducer()
-    private val initialState = EditRecipeViewState()
+    private val reducer =
+        EditRecipeViewReducer()
+    private val initialState =
+        EditRecipeViewState()
 
     @Test
     fun `should return State with directions when receive DirectionsChanged Event`() {

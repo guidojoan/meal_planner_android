@@ -1,5 +1,6 @@
 package com.astutify.mealplanner.auth.presentation.login
 
+import com.astutify.mealplanner.auth.presentation.login.mvi.LoginViewState
 import com.astutify.mealplanner.core.model.data.GoogleUser
 import io.reactivex.Observable
 

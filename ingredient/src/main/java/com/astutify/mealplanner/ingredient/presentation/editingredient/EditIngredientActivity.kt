@@ -12,10 +12,11 @@ import com.astutify.mealplanner.coreui.presentation.utils.AfterTextChangeWatcher
 import com.astutify.mealplanner.coreui.presentation.control.ItemWithMeasurementCollection
 import com.astutify.mealplanner.coreui.presentation.control.hideButton
 import com.astutify.mealplanner.coreui.presentation.control.showButton
-import com.astutify.mealplanner.coreui.presentation.mvi.Feature
+import com.astutify.mvi.Feature
 import com.astutify.mealplanner.ingredient.IngredientComponentProvider
 import com.astutify.mealplanner.ingredient.R
 import com.astutify.mealplanner.ingredient.databinding.ViewEditIngredientBinding
+import com.astutify.mealplanner.ingredient.presentation.editingredient.mvi.EditIngredientViewState
 import com.jakewharton.rxrelay2.PublishRelay
 import com.jakewharton.rxrelay2.Relay
 import dagger.BindsInstance

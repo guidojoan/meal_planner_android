@@ -14,6 +14,7 @@ import com.astutify.mealplanner.userprofile.R
 import com.astutify.mealplanner.userprofile.UserProfileComponentProvider
 import com.astutify.mealplanner.userprofile.UserProfileOutNavigatorModule
 import com.astutify.mealplanner.userprofile.databinding.ViewUserProfileBinding
+import com.astutify.mealplanner.userprofile.presentation.profile.mvi.UserProfileViewState
 import com.jakewharton.rxrelay2.PublishRelay
 import com.jakewharton.rxrelay2.Relay
 import dagger.BindsInstance

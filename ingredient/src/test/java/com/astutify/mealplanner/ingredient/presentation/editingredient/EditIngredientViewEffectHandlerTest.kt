@@ -6,9 +6,13 @@ import com.astutify.mealplanner.coreui.model.ActivityResult
 import com.astutify.mealplanner.coreui.model.IngredientViewModel
 import com.astutify.mealplanner.coreui.model.mapper.toPresentation
 import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
-import com.astutify.mealplanner.ingredient.Navigator
+import com.astutify.mealplanner.ingredient.presentation.Navigator
 import com.astutify.mealplanner.ingredient.domain.AddIngredientUseCase
 import com.astutify.mealplanner.ingredient.domain.UpdateIngredientUseCase
+import com.astutify.mealplanner.ingredient.presentation.editingredient.mvi.EditIngredientViewEffect
+import com.astutify.mealplanner.ingredient.presentation.editingredient.mvi.EditIngredientViewEffectHandler
+import com.astutify.mealplanner.ingredient.presentation.editingredient.mvi.EditIngredientViewEvent
+import com.astutify.mealplanner.ingredient.presentation.editingredient.mvi.EditIngredientViewState
 import com.nhaarman.mockitokotlin2.argumentCaptor
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
@@ -24,15 +28,17 @@ class EditIngredientViewEffectHandlerTest {
     private val getIngredientCategoriesUseCase: GetIngredientCategoriesUseCase = mock()
     private val getMeasurementsUseCase: GetMeasurementsUseCase = mock()
     private val updateIngredientUseCase: UpdateIngredientUseCase = mock()
-    private val effectHandler = EditIngredientViewEffectHandler(
-        Schedulers.trampoline(),
-        navigator,
-        addIngredientUseCase,
-        getIngredientCategoriesUseCase,
-        getMeasurementsUseCase,
-        updateIngredientUseCase
-    )
-    private val initialState = EditIngredientViewState()
+    private val effectHandler =
+        EditIngredientViewEffectHandler(
+            Schedulers.trampoline(),
+            navigator,
+            addIngredientUseCase,
+            getIngredientCategoriesUseCase,
+            getMeasurementsUseCase,
+            updateIngredientUseCase
+        )
+    private val initialState =
+        EditIngredientViewState()
 
     @Test
     fun `should return State with Measurements,Categories when is invoked with LoadData Event`() {
