@@ -4,32 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@android:color/transparent"
     android:orientation="vertical"
     android:padding="30dp">
 
-    <TextView
-        android:id="@+id/ingredientName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        style="@style/card_subtitle"
-        android:ellipsize="end"
-        android:maxLines="2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        tools:text="gdrshfj"/>
-
-    <com.astutify.mealplanner.coreui.presentation.control.ChipCollectionSingleSelection
-        android:id="@+id/measurementSelector"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/quantityLayout"
+        android:id="@+id/nameLayout"
         style="@style/EditTextOutlined"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,7 +20,7 @@
         app:layout_constraintTop_toBottomOf="@id/ingredientName">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/quantity"
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"

@@ -25,6 +25,7 @@ import com.astutify.mealplanner.coreui.presentation.utils.TestHelper
 import com.astutify.mealplanner.ingredient.R
 import com.astutify.mealplanner.ingredient.presentation.recipeingredient.mvi.RecipeIngredientsViewState
 import com.astutify.mealplanner.utils.RecyclerViewItemCountAssertion.Companion.withItemCount
+import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import io.reactivex.observers.TestObserver
 import org.hamcrest.CoreMatchers.allOf

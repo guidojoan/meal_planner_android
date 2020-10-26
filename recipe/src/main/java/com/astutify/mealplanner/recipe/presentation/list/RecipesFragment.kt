@@ -116,9 +116,9 @@ class RecipesFragment :
     }
 
     override fun render(viewState: RecipesViewState) {
+        view.recipesList.render(viewState.recipes)
         renderLoading(viewState)
         renderError(viewState)
-        view.recipesList.render(viewState.recipes)
     }
 
     private fun renderLoading(viewState: RecipesViewState) {
